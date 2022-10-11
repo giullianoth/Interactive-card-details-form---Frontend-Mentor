@@ -12,6 +12,11 @@
     @include setBrowserCores(box-sizing, $value);
 }
 
+// Set Border Radius
+@mixin borderRadius($value: $radius-default) {
+    @include setBrowserCores(border-radius, $value);
+}
+
 // Set full width and height
 @mixin fullContent() {
     width: 100%;
