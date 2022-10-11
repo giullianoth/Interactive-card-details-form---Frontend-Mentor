@@ -1,0 +1,13 @@
+// Including Browser Cores
+@mixin setBrowserCores($attr, $value, $cores: $browser-cores-default) {
+    #{$attr}: #{$value};
+
+    @each $core in $cores {
+        -#{$core}-#{$attr}: #{$value};
+    }
+}
+
+// Setting Box Sizing
+@mixin boxSizing($value: border-box) {
+    @include setBrowserCores(box-sizing, $value);
+}

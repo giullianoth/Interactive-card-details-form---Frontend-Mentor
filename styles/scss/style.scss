@@ -1,2 +1,9 @@
-// SCSS Variables
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
+// SCSS Variables and Mixins
 @import "variables";
+@import "mixins";
+
+// Layout stylize
+@import "boot";
