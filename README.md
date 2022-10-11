@@ -65,6 +65,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Step by step of building
 
 1. HTML structuring - The framework was built using HTML5 semantics.
+2. Sass - Style Sheets were made with Sass files.
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
