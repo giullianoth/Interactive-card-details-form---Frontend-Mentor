@@ -6,19 +6,21 @@
     .card {
         &_template {
             @include backgroundImage("../../images/bg-main-desktop.png");
-            @include flexBasis(35%);
+            @include flexBasis(30%);
 
             @include relative;
 
+            pointer-events: none;
+
             &_front {
-                @include absoluteDisplace;
+                @include absoluteDisplace(50%, unset, -20%, calc(-100% - 15px));
+                right: -50%;
 
                 &_bg {
                     @include relative;
 
                     &_info {
-                        @include absolute;
-                        top: unset;
+                        @include absolute(unset, 0);
                         bottom: 0;
                         
                         @include flex(space-between, flex-end, wrap);
@@ -44,13 +46,28 @@
             }
 
             &_back {
-                @include absoluteDisplace;
-                display: none;
+                @include absoluteDisplace(50%, unset, 0, calc(0% + 15px));
+                right: -50%;
+
+                &_bg {
+                    @include relative;
+
+                    &_info {
+                        @include absoluteDisplace(50%, unset, -50%, -50%);
+                        right: 0;
+
+                        color: $color-white;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+
+                        padding: 20px;
+                    }
+                }
             }
         }
     
         &_form {
-            @include flexBasis(65%);
+            @include flexBasis(70%);
         }
     }
 }

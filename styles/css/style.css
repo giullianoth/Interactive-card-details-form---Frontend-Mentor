@@ -43,23 +43,24 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  flex-basis: 35%;
+  flex-basis: 30%;
   position: relative;
+  pointer-events: none;
 }
 .main_content .card_template_front {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: unset;
+  transform: translate(-20%, calc(-100% - 15px));
+  right: -50%;
 }
 .main_content .card_template_front_bg {
   position: relative;
 }
 .main_content .card_template_front_bg_info {
   position: absolute;
-  top: 0;
-  left: 0;
   top: unset;
+  left: 0;
   bottom: 0;
   display: flex;
   justify-content: space-between;
@@ -81,12 +82,26 @@ a {
 .main_content .card_template_back {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: unset;
+  transform: translate(0, calc(0% + 15px));
+  right: -50%;
+}
+.main_content .card_template_back_bg {
+  position: relative;
+}
+.main_content .card_template_back_bg_info {
+  position: absolute;
+  top: 50%;
+  left: unset;
   transform: translate(-50%, -50%);
-  display: none;
+  right: 0;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 20px;
 }
 .main_content .card_form {
-  flex-basis: 65%;
+  flex-basis: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */
