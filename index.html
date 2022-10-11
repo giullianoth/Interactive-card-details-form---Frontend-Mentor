@@ -63,21 +63,29 @@
 
         <label class="card_form_content_cvc">
           <span>CVC</span>
-          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3">
+          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3" class="error">
         </label>
 
         <div class="card_form_content_btn">
           <button type="submit">Confirm</button>
         </div>
       </form>
+
+      <div class="card_form_success">
+        <div class="card_form_success_icon">
+          <img src="images/icon-complete.svg" alt="Success">
+        </div>
+
+        <header class="card_form_success_title">
+          <h2>Thank you!</h2>
+          <p>We've added your card details</p>
+        </header>
+        <div class="card_form_success_btn">
+          <button>Continue</button>
+        </div>
+      </div>
     </section>
   </main>
-
-  <!-- Completed state start -->
-
-  <!-- Thank you!
-  We've added your card details
-  Continue -->
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

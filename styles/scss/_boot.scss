@@ -26,8 +26,12 @@ a {
 
 input {
     border: 1px solid $color-light-grayish-violet;
+
     font-size: 1em;
+    font-weight: 500;
     font-family: $font-space-grotesk;
+    color: $color-very-dark-violet;
+
     padding: 16px;
 
     outline: none;
@@ -43,6 +47,8 @@ input {
 button {
     font-size: 1em;
     color: $color-white;
+    letter-spacing: 0.1em;
+
     padding: 16px;
     border: none;
     background-color: $color-very-dark-violet;

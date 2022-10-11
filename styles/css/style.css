@@ -27,7 +27,9 @@ a:hover {
 input {
   border: 1px solid hsl(270deg, 3%, 87%);
   font-size: 1em;
+  font-weight: 500;
   font-family: "Space Grotesk", sans-serif;
+  color: hsl(278deg, 68%, 11%);
   padding: 16px;
   outline: none;
   display: inline-block;
@@ -42,6 +44,7 @@ input::-webkit-input-placeholder {
 button {
   font-size: 1em;
   color: hsl(0deg, 0%, 100%);
+  letter-spacing: 0.1em;
   padding: 16px;
   border: none;
   background-color: hsl(278deg, 68%, 11%);
@@ -190,6 +193,34 @@ button {
   flex-basis: 100%;
 }
 .main_content .card_form_content_btn button {
+  width: 100%;
+}
+.main_content .card_form_content input.error {
+  border-color: hsl(0deg, 100%, 66%);
+}
+.main_content .card_form_content input.valid, .main_content .card_form_content input:focus, .main_content .card_form_content input:hover {
+  border-color: transparent;
+  border-image: linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+}
+.main_content .card_form_success {
+  display: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.main_content .card_form_success * {
+  flex-basis: 100%;
+  text-align: center;
+}
+.main_content .card_form_success_title {
+  font-weight: 400;
+}
+.main_content .card_form_success_title h2 {
+  margin-bottom: 20px;
+}
+.main_content .card_form_success_btn button {
   width: 100%;
 }
 

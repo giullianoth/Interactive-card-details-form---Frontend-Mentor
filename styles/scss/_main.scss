@@ -134,6 +134,42 @@
                         width: 100%;
                     }
                 }
+
+                input {
+                    &.error {
+                        border-color: $color-red-input-errors;
+                    }
+
+                    &.valid, &:focus, &:hover {
+                        border-color: transparent;
+                        border-image: linear-gradient(to right, $color-linear-gradient-active-input-border);
+                    }
+                }
+            }
+
+            &_success {
+                display: none !important;
+                @include flex;
+                gap: 40px;
+
+                & * {
+                    @include flexBasis(100%);
+                    text-align: center;
+                }
+
+                &_title {
+                    font-weight: 400;
+
+                    h2 {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                &_btn {
+                    button {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
