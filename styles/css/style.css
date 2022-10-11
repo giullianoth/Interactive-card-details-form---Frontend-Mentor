@@ -20,6 +20,9 @@ body {
 a {
   text-decoration: none;
 }
+a:hover {
+  text-decoration: underline;
+}
 
 input {
   border: 1px solid hsl(270deg, 3%, 87%);
@@ -132,6 +135,10 @@ button {
 }
 .main_content .card_form {
   flex-basis: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 12% 12% 12% 24%;
   text-transform: uppercase;
 }
@@ -140,6 +147,7 @@ button {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  max-height: 650px;
 }
 .main_content .card_form_content label {
   font-weight: 500;
@@ -164,11 +172,14 @@ button {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 8px;
+  column-gap: 6px;
+}
+.main_content .card_form_content_exp_date span {
+  flex-basis: 100%;
 }
 .main_content .card_form_content_exp_date input {
   width: auto;
-  flex-basis: calc(50% - 8px);
+  flex-basis: calc(50% - 6px);
 }
 .main_content .card_form_content_cvc {
   flex-basis: calc(50% - 10px);

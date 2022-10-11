@@ -73,6 +73,7 @@
     
         &_form {
             @include flexBasis(70%);
+            @include flex;
 
             padding: 12% 12% 12% 24%;
 
@@ -80,6 +81,8 @@
 
             &_content {
                 @include flex(space-between);
+
+                max-height: 650px;
 
                 label {
                     font-weight: 500;
@@ -106,11 +109,15 @@
                     margin-right: 10px;
 
                     @include flex(space-between, center, wrap);
-                    column-gap: 8px;
+                    column-gap: 6px;
+
+                    span {
+                        @include flexBasis(100%);
+                    }
 
                     input {
                         width: auto;
-                        @include flexBasis(50%, 8px);
+                        @include flexBasis(50%, 6px);
                     }
                 }
 
