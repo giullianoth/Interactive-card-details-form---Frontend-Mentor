@@ -19,3 +19,31 @@ body {
 a {
     text-decoration: none;
 }
+
+input {
+    border: 1px solid $color-light-grayish-violet;
+    font-size: 1em;
+    font-family: $font-space-grotesk;
+    padding: 16px;
+
+    outline: none;
+    display: inline-block;
+
+    @include borderRadius;
+
+    &::-webkit-input-placeholder {
+        color: $color-light-grayish-violet;
+    }
+}
+
+button {
+    font-size: 1em;
+    color: $color-white;
+    padding: 16px;
+    border: none;
+    background-color: $color-very-dark-violet;
+
+    cursor: pointer;
+
+    @include borderRadius;
+}

@@ -21,6 +21,33 @@ a {
   text-decoration: none;
 }
 
+input {
+  border: 1px solid hsl(270deg, 3%, 87%);
+  font-size: 1em;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 16px;
+  outline: none;
+  display: inline-block;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+input::-webkit-input-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+
+button {
+  font-size: 1em;
+  color: hsl(0deg, 0%, 100%);
+  padding: 16px;
+  border: none;
+  background-color: hsl(278deg, 68%, 11%);
+  cursor: pointer;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
 .main_header h1 {
   display: none;
 }
@@ -37,6 +64,7 @@ a {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
+  letter-spacing: 0.1em;
 }
 .main_content .card_template {
   background-image: url("../../images/bg-main-desktop.png");
@@ -68,12 +96,12 @@ a {
   flex-wrap: wrap;
   color: hsl(0deg, 0%, 100%);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   padding: 30px;
 }
 .main_content .card_template_front_bg_info_number {
   flex-basis: 100%;
   font-size: 1.6em;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .main_content .card_template_front_bg_info_name, .main_content .card_template_front_bg_info_exp_date {
@@ -97,11 +125,58 @@ a {
   right: 0;
   color: hsl(0deg, 0%, 100%);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   padding: 20px;
 }
 .main_content .card_form {
   flex-basis: 70%;
+  padding: 12% 12% 12% 24%;
+  text-transform: uppercase;
+}
+.main_content .card_form_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main_content .card_form_content label {
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.main_content .card_form_content label span {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.8em;
+}
+.main_content .card_form_content label input {
+  width: 100%;
+}
+.main_content .card_form_content_name, .main_content .card_form_content_number {
+  flex-basis: 100%;
+  display: block;
+}
+.main_content .card_form_content_exp_date {
+  flex-basis: calc(50% - 20px);
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 8px;
+}
+.main_content .card_form_content_exp_date input {
+  width: auto;
+  flex-basis: calc(50% - 8px);
+}
+.main_content .card_form_content_cvc {
+  flex-basis: calc(50% - 10px);
+  margin-left: 10px;
+  display: block;
+}
+.main_content .card_form_content_btn {
+  flex-basis: 100%;
+}
+.main_content .card_form_content_btn button {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

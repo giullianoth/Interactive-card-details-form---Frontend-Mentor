@@ -2,6 +2,8 @@
     @include fullContent;
     @include absoluteFull;
     @include flex(flex-start, stretch, nowrap);
+    
+    letter-spacing: 0.1em;
 
     .card {
         &_template {
@@ -27,7 +29,6 @@
 
                         color: $color-white;
                         text-transform: uppercase;
-                        letter-spacing: 0.1em;
 
                         padding: 30px;
 
@@ -35,6 +36,7 @@
                             @include flexBasis(100%);
 
                             font-size: 1.6em;
+                            font-weight: 500;
                             margin-bottom: 10px;
                         }
 
@@ -58,7 +60,6 @@
 
                         color: $color-white;
                         text-transform: uppercase;
-                        letter-spacing: 0.1em;
 
                         padding: 20px;
                     }
@@ -68,6 +69,61 @@
     
         &_form {
             @include flexBasis(70%);
+
+            padding: 12% 12% 12% 24%;
+
+            text-transform: uppercase;
+
+            &_content {
+                @include flex(space-between);
+
+                label {
+                    font-weight: 500;
+                    margin-bottom: 24px;
+    
+                    span {
+                        display: inline-block;
+                        margin-bottom: 12px;
+                        font-size: 0.8em;
+                    }
+    
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                &_name, &_number {
+                    @include flexBasis(100%);
+                    display: block;
+                }
+
+                &_exp_date {
+                    @include flexBasis(50%, 20px);
+                    margin-right: 10px;
+
+                    @include flex(space-between, center, wrap);
+                    column-gap: 8px;
+
+                    input {
+                        width: auto;
+                        @include flexBasis(50%, 8px);
+                    }
+                }
+
+                &_cvc {
+                    @include flexBasis(50%, 10px);
+                    margin-left: 10px;
+                    display: block;
+                }
+
+                &_btn {
+                    @include flexBasis(100%);
+
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }
