@@ -62,6 +62,10 @@
                         text-transform: uppercase;
 
                         padding: 20px;
+
+                        &_cvc {
+                            font-size: 0.8em;
+                        }
                     }
                 }
             }

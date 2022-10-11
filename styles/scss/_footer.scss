@@ -1,0 +1,13 @@
+.attribution {
+    @include absolute(unset, 0);
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+
+    font-size: 11px;
+    text-align: center;
+
+    a {
+        color: hsl(228, 45%, 44%);
+      }
+  }
