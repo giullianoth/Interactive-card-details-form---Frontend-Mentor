@@ -7,7 +7,13 @@
     }
 }
 
-// Setting Box Sizing
+// Set Box Sizing
 @mixin boxSizing($value: border-box) {
     @include setBrowserCores(box-sizing, $value);
+}
+
+// Set full width and height
+@mixin fullContent() {
+    width: 100%;
+    height: 100%;
 }

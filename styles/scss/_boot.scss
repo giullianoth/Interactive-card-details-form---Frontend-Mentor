@@ -1,8 +1,15 @@
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    font-size: $font-size-default;
-    font-family: $font-space-grotesk;
 
     @include boxSizing;
+}
+
+body {
+    @include fullContent;
+    min-height: 100vh;
+    
+    font-size: $font-size-default;
+    font-family: $font-space-grotesk;
+    color: $color-very-dark-violet;
 }
