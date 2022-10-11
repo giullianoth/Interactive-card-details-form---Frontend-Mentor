@@ -16,4 +16,12 @@ body {
   color: hsl(278deg, 68%, 11%);
 }
 
+a {
+  text-decoration: none;
+}
+
+.main_header h1 {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
