@@ -17,3 +17,54 @@
     width: 100%;
     height: 100%;
 }
+
+// Display Flex
+@mixin flex($justifyContent: center, $alignItems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap != 0 {
+        flex-basis: calc($basis - $gap);
+    }
+
+    @else {
+        flex-basis: $basis;
+    }
+}
+
+// Position Relative
+@mixin relative() {
+    position: relative;
+}
+
+// Position Absolute
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin absoluteFull() {
+    @include absolute;
+    @include fullContent;
+}
+
+@mixin absoluteDisplace($top: 50%, $left: 50%, $x: -50%, $y: -50%) {
+    @include absolute($top, $left);
+    transform: translate($x, $y);
+}
+
+// Background Image
+@mixin backgroundImage($imagePath: "", $position: center center, $size: cover, $repeat: no-repeat) {
+    @if $imagePath != "" {
+        background-image: url($imagePath);
+    }
+
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}

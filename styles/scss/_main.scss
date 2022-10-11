@@ -1,0 +1,56 @@
+.main_content {
+    @include fullContent;
+    @include absoluteFull;
+    @include flex(flex-start, stretch, nowrap);
+
+    .card {
+        &_template {
+            @include backgroundImage("../../images/bg-main-desktop.png");
+            @include flexBasis(35%);
+
+            @include relative;
+
+            &_front {
+                @include absoluteDisplace;
+
+                &_bg {
+                    @include relative;
+
+                    &_info {
+                        @include absolute;
+                        top: unset;
+                        bottom: 0;
+                        
+                        @include flex(space-between, flex-end, wrap);
+
+                        color: $color-white;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+
+                        padding: 30px;
+
+                        &_number {
+                            @include flexBasis(100%);
+
+                            font-size: 1.6em;
+                            margin-bottom: 10px;
+                        }
+
+                        &_name, &_exp_date {
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+
+            &_back {
+                @include absoluteDisplace;
+                display: none;
+            }
+        }
+    
+        &_form {
+            @include flexBasis(65%);
+        }
+    }
+}

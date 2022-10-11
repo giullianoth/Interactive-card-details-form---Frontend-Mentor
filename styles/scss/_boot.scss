@@ -12,6 +12,8 @@ body {
     font-size: $font-size-default;
     font-family: $font-space-grotesk;
     color: $color-very-dark-violet;
+
+    @include relative;
 }
 
 a {
