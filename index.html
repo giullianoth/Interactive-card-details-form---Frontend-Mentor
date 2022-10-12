@@ -24,6 +24,10 @@
         <div class="card_template_front_bg">
           <img src="images/bg-card-front.png" alt="Card Front">
 
+          <div class="card_template_front_bg_logo">
+            <img src="images/card-logo.svg" alt="Card Logo">
+          </div>
+
           <div class="card_template_front_bg_info">
             <p class="card_template_front_bg_info_number">0000 0000 0000 0000</p>
             <p class="card_template_front_bg_info_name">Jane Appleseed</p>
@@ -63,7 +67,7 @@
 
         <label class="card_form_content_cvc">
           <span>CVC</span>
-          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3" class="valid">
+          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3">
         </label>
 
         <div class="card_form_content_btn">
@@ -71,7 +75,7 @@
         </div>
       </form>
 
-      <div class="card_form_success">
+      <div class="card_form_success" style="display:none">
         <div class="card_form_success_icon">
           <img src="images/icon-complete.svg" alt="Success">
         </div>
@@ -80,7 +84,7 @@
           <h2>Thank you!</h2>
           <p>We've added your card details</p>
         </header>
-        
+
         <div class="card_form_success_btn">
           <button>Continue</button>
         </div>

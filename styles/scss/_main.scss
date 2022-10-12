@@ -1,5 +1,4 @@
 .main_content {
-    @include fullContent;
     @include absoluteFull;
     @include flex(flex-start, stretch, nowrap);
     
@@ -21,6 +20,22 @@
                 &_bg {
                     @include relative;
 
+                    & > img {
+                        @include setResponsiveDesign(1200px) {
+                            width: 375px;
+                        }
+                    }
+
+                    &_logo {
+                        @include absolute;
+                        padding: 30px;
+                        width: 36%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
                     &_info {
                         @include absolute(unset, 0);
                         bottom: 0;
@@ -38,6 +53,10 @@
                             font-size: 1.6em;
                             font-weight: 500;
                             margin-bottom: 10px;
+
+                            @include setResponsiveDesign(1200px) {
+                                font-size: 1.4em;
+                            }
                         }
 
                         &_name, &_exp_date {
@@ -53,6 +72,12 @@
 
                 &_bg {
                     @include relative;
+
+                    & > img {
+                        @include setResponsiveDesign(1200px) {
+                            width: 375px;
+                        }
+                    }
 
                     &_info {
                         @include absoluteDisplace(50%, unset, -50%, -50%);
@@ -111,6 +136,10 @@
                     @include flex(space-between, center, wrap);
                     column-gap: 6px;
 
+                    @include setResponsiveDesign(1200px) {
+                        font-size: 0.8em;
+                    }
+
                     span {
                         @include flexBasis(100%);
                     }
@@ -125,6 +154,10 @@
                     @include flexBasis(50%, 10px);
                     margin-left: 10px;
                     display: block;
+
+                    @include setResponsiveDesign(1200px) {
+                        font-size: 0.8em;
+                    }
                 }
 
                 &_btn {

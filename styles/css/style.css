@@ -59,8 +59,6 @@ button {
 }
 
 .main_content {
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -91,6 +89,21 @@ button {
 .main_content .card_template_front_bg {
   position: relative;
 }
+@media screen and (max-width: 1200px) {
+  .main_content .card_template_front_bg > img {
+    width: 375px;
+  }
+}
+.main_content .card_template_front_bg_logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  width: 36%;
+}
+.main_content .card_template_front_bg_logo img {
+  width: 100%;
+}
 .main_content .card_template_front_bg_info {
   position: absolute;
   top: unset;
@@ -110,6 +123,11 @@ button {
   font-weight: 500;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 1200px) {
+  .main_content .card_template_front_bg_info_number {
+    font-size: 1.4em;
+  }
+}
 .main_content .card_template_front_bg_info_name, .main_content .card_template_front_bg_info_exp_date {
   font-size: 0.8em;
 }
@@ -122,6 +140,11 @@ button {
 }
 .main_content .card_template_back_bg {
   position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .main_content .card_template_back_bg > img {
+    width: 375px;
+  }
 }
 .main_content .card_template_back_bg_info {
   position: absolute;
@@ -177,6 +200,11 @@ button {
   flex-wrap: wrap;
   column-gap: 6px;
 }
+@media screen and (max-width: 1200px) {
+  .main_content .card_form_content_exp_date {
+    font-size: 0.8em;
+  }
+}
 .main_content .card_form_content_exp_date span {
   flex-basis: 100%;
 }
@@ -188,6 +216,11 @@ button {
   flex-basis: calc(50% - 10px);
   margin-left: 10px;
   display: block;
+}
+@media screen and (max-width: 1200px) {
+  .main_content .card_form_content_cvc {
+    font-size: 0.8em;
+  }
 }
 .main_content .card_form_content_btn {
   flex-basis: 100%;
