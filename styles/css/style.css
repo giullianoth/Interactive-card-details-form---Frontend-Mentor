@@ -70,6 +70,11 @@ button {
   flex-wrap: nowrap;
   letter-spacing: 0.1em;
 }
+@media screen and (max-width: 768px) {
+  .main_content {
+    flex-direction: column;
+  }
+}
 .main_content .card_template {
   background-image: url("../../images/bg-main-desktop.png");
   background-repeat: no-repeat;
@@ -79,17 +84,51 @@ button {
   position: relative;
   pointer-events: none;
 }
+@media screen and (max-width: 768px) {
+  .main_content .card_template {
+    background-image: url("../../images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
 .main_content .card_template_front {
   position: absolute;
   top: 50%;
   left: unset;
   transform: translate(-20%, calc(-100% - 15px));
   right: -50%;
+  z-index: 3;
+}
+@media screen and (max-width: 768px) {
+  .main_content .card_template_front {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, 0);
+    right: unset;
+  }
 }
 .main_content .card_template_front_bg {
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .main_content .card_template_front_bg {
+    width: 375px;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 1200px) {
+  .main_content .card_template_front_bg > img {
+    width: 375px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main_content .card_template_front_bg > img {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
   .main_content .card_template_front_bg > img {
     width: 375px;
   }
@@ -128,8 +167,18 @@ button {
     font-size: 1.4em;
   }
 }
+@media screen and (max-width: 1024px) {
+  .main_content .card_template_front_bg_info_number {
+    font-size: 1em;
+  }
+}
 .main_content .card_template_front_bg_info_name, .main_content .card_template_front_bg_info_exp_date {
   font-size: 0.8em;
+}
+@media screen and (max-width: 1024px) {
+  .main_content .card_template_front_bg_info_name, .main_content .card_template_front_bg_info_exp_date {
+    font-size: 0.6em;
+  }
 }
 .main_content .card_template_back {
   position: absolute;
@@ -137,11 +186,37 @@ button {
   left: unset;
   transform: translate(0, calc(0% + 15px));
   right: -50%;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .main_content .card_template_back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+    right: unset;
+  }
 }
 .main_content .card_template_back_bg {
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .main_content .card_template_back_bg {
+    width: 375px;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 1200px) {
+  .main_content .card_template_back_bg > img {
+    width: 375px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main_content .card_template_back_bg > img {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
   .main_content .card_template_back_bg > img {
     width: 375px;
   }
@@ -159,14 +234,27 @@ button {
 .main_content .card_template_back_bg_info_cvc {
   font-size: 0.8em;
 }
+@media screen and (max-width: 1024px) {
+  .main_content .card_template_back_bg_info_cvc {
+    font-size: 0.6em;
+  }
+}
 .main_content .card_form {
   flex-basis: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 12% 12% 12% 24%;
+  padding-top: 12%;
+  padding-right: 12%;
+  padding-bottom: 12%;
+  padding-left: 24%;
   text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .main_content .card_form {
+    padding: 12% 24%;
+  }
 }
 .main_content .card_form_content {
   display: flex;
@@ -199,10 +287,12 @@ button {
   align-items: center;
   flex-wrap: wrap;
   column-gap: 6px;
+  align-self: flex-end;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .main_content .card_form_content_exp_date {
-    font-size: 0.8em;
+    margin-right: 3px;
+    flex-basis: calc(50% - 6px);
   }
 }
 .main_content .card_form_content_exp_date span {
@@ -216,10 +306,12 @@ button {
   flex-basis: calc(50% - 10px);
   margin-left: 10px;
   display: block;
+  align-self: flex-end;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .main_content .card_form_content_cvc {
-    font-size: 0.8em;
+    margin-left: 3px;
+    flex-basis: calc(50% - 6px);
   }
 }
 .main_content .card_form_content_btn {
@@ -243,7 +335,6 @@ button {
   -webkit-background-clip: padding-box, border-box;
 }
 .main_content .card_form_success {
-  display: none !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,6 +364,16 @@ button {
   padding: 12px;
   font-size: 11px;
   text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .attribution {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 768px) {
+  .attribution {
+    text-align: center;
+  }
 }
 .attribution a {
   color: hsl(228deg, 45%, 44%);

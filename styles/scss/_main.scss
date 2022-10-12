@@ -4,6 +4,10 @@
     
     letter-spacing: 0.1em;
 
+    @include setResponsiveDesign(768px) {
+        flex-direction: column;
+    }
+
     .card {
         &_template {
             @include backgroundImage("../../images/bg-main-desktop.png");
@@ -13,15 +17,38 @@
 
             pointer-events: none;
 
+            @include setResponsiveDesign(768px) {
+                @include backgroundImage("../../images/bg-main-mobile.png");
+            }
+
             &_front {
                 @include absoluteDisplace(50%, unset, -20%, calc(-100% - 15px));
                 right: -50%;
+                z-index: 3;
+
+                @include setResponsiveDesign(768px) {
+                    @include absoluteDisplace(50%, 50%, -75%, 0);
+                    right: unset;
+                }
 
                 &_bg {
                     @include relative;
 
+                    @include setResponsiveDesign(768px) {
+                        width: 375px;
+                        margin: 0 auto;
+                    }
+
                     & > img {
                         @include setResponsiveDesign(1200px) {
+                            width: 375px;
+                        }
+
+                        @include setResponsiveDesign(1024px) {
+                            width: 300px;
+                        }
+
+                        @include setResponsiveDesign(768px) {
                             width: 375px;
                         }
                     }
@@ -57,10 +84,18 @@
                             @include setResponsiveDesign(1200px) {
                                 font-size: 1.4em;
                             }
+
+                            @include setResponsiveDesign(1024px) {
+                                font-size: 1em;
+                            }
                         }
 
                         &_name, &_exp_date {
                             font-size: 0.8em;
+
+                            @include setResponsiveDesign(1024px) {
+                                font-size: 0.6em;
+                            }
                         }
                     }
                 }
@@ -69,12 +104,31 @@
             &_back {
                 @include absoluteDisplace(50%, unset, 0, calc(0% + 15px));
                 right: -50%;
+                z-index: 2;
+
+                @include setResponsiveDesign(768px) {
+                    @include absoluteDisplace(50%, 50%, -25%, -50%);
+                    right: unset;
+                }
 
                 &_bg {
                     @include relative;
+                    
+                    @include setResponsiveDesign(768px) {
+                        width: 375px;
+                        margin: 0 auto;
+                    }
 
                     & > img {
                         @include setResponsiveDesign(1200px) {
+                            width: 375px;
+                        }
+
+                        @include setResponsiveDesign(1024px) {
+                            width: 300px;
+                        }
+
+                        @include setResponsiveDesign(768px) {
                             width: 375px;
                         }
                     }
@@ -90,6 +144,10 @@
 
                         &_cvc {
                             font-size: 0.8em;
+                            
+                            @include setResponsiveDesign(1024px) {
+                                font-size: 0.6em;
+                            }
                         }
                     }
                 }
@@ -100,7 +158,16 @@
             @include flexBasis(70%);
             @include flex;
 
-            padding: 12% 12% 12% 24%;
+            padding: {
+                top: 12%;
+                right: 12%;
+                bottom: 12%;
+                left: 24%;
+            }
+
+            @include setResponsiveDesign(768px) {
+                padding: 12% 24%;
+            }
 
             text-transform: uppercase;
 
@@ -135,9 +202,11 @@
 
                     @include flex(space-between, center, wrap);
                     column-gap: 6px;
+                    align-self: flex-end;
 
-                    @include setResponsiveDesign(1200px) {
-                        font-size: 0.8em;
+                    @include setResponsiveDesign(1024px) {
+                        margin-right: 3px;
+                        @include flexBasis(50%, 6px);
                     }
 
                     span {
@@ -154,9 +223,11 @@
                     @include flexBasis(50%, 10px);
                     margin-left: 10px;
                     display: block;
+                    align-self: flex-end;
 
-                    @include setResponsiveDesign(1200px) {
-                        font-size: 0.8em;
+                    @include setResponsiveDesign(1024px) {
+                        margin-left: 3px;
+                        @include flexBasis(50%, 6px);
                     }
                 }
 
@@ -188,7 +259,6 @@
             }
 
             &_success {
-                display: none !important;
                 @include flex;
                 gap: 40px;
 
