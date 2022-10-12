@@ -103,10 +103,18 @@ button {
 @media screen and (max-width: 768px) {
   .main_content .card_template_front {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-75%, 0);
     right: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main_content .card_template_front {
+    position: absolute;
+    top: 55%;
+    left: 16px;
+    transform: translate(0, 0);
   }
 }
 .main_content .card_template_front_bg {
@@ -116,6 +124,11 @@ button {
   .main_content .card_template_front_bg {
     width: 375px;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main_content .card_template_front_bg {
+    width: 300px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -131,6 +144,11 @@ button {
 @media screen and (max-width: 768px) {
   .main_content .card_template_front_bg > img {
     width: 375px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main_content .card_template_front_bg > img {
+    width: 300px;
   }
 }
 .main_content .card_template_front_bg_logo {
@@ -197,6 +215,15 @@ button {
     right: unset;
   }
 }
+@media screen and (max-width: 480px) {
+  .main_content .card_template_back {
+    position: absolute;
+    top: 50%;
+    left: unset;
+    transform: translate(0, -50%);
+    right: 16px;
+  }
+}
 .main_content .card_template_back_bg {
   position: relative;
 }
@@ -204,6 +231,11 @@ button {
   .main_content .card_template_back_bg {
     width: 375px;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main_content .card_template_back_bg {
+    width: 300px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -219,6 +251,11 @@ button {
 @media screen and (max-width: 768px) {
   .main_content .card_template_back_bg > img {
     width: 375px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main_content .card_template_back_bg > img {
+    width: 300px;
   }
 }
 .main_content .card_template_back_bg_info {
@@ -253,7 +290,15 @@ button {
 }
 @media screen and (max-width: 768px) {
   .main_content .card_form {
-    padding: 12% 24%;
+    padding-top: 24%;
+    padding-right: 24%;
+    padding-bottom: 12%;
+    padding-left: 24%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main_content .card_form {
+    padding: 30px;
   }
 }
 .main_content .card_form_content {
@@ -271,6 +316,7 @@ button {
   display: inline-block;
   margin-bottom: 12px;
   font-size: 0.8em;
+  font-weight: 500;
 }
 .main_content .card_form_content label input {
   width: 100%;

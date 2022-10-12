@@ -27,8 +27,12 @@
                 z-index: 3;
 
                 @include setResponsiveDesign(768px) {
-                    @include absoluteDisplace(50%, 50%, -75%, 0);
+                    @include absoluteDisplace(55%, 50%, -75%, 0);
                     right: unset;
+                }
+
+                @include setResponsiveDesign(480px) {
+                    @include absoluteDisplace(55%, 16px, 0, 0);
                 }
 
                 &_bg {
@@ -37,6 +41,10 @@
                     @include setResponsiveDesign(768px) {
                         width: 375px;
                         margin: 0 auto;
+                    }
+
+                    @include setResponsiveDesign(560px) {
+                        width: 300px;
                     }
 
                     & > img {
@@ -50,6 +58,10 @@
 
                         @include setResponsiveDesign(768px) {
                             width: 375px;
+                        }
+
+                        @include setResponsiveDesign(560px) {
+                            width: 300px;
                         }
                     }
 
@@ -111,12 +123,21 @@
                     right: unset;
                 }
 
+                @include setResponsiveDesign(480px) {
+                    @include absoluteDisplace(50%, unset, 0, -50%);
+                    right: 16px;
+                }
+
                 &_bg {
                     @include relative;
                     
                     @include setResponsiveDesign(768px) {
                         width: 375px;
                         margin: 0 auto;
+                    }
+
+                    @include setResponsiveDesign(560px) {
+                        width: 300px;
                     }
 
                     & > img {
@@ -130,6 +151,10 @@
 
                         @include setResponsiveDesign(768px) {
                             width: 375px;
+                        }
+
+                        @include setResponsiveDesign(560px) {
+                            width: 300px;
                         }
                     }
 
@@ -166,7 +191,16 @@
             }
 
             @include setResponsiveDesign(768px) {
-                padding: 12% 24%;
+                padding: {
+                    top: 24%;
+                    right: 24%;
+                    bottom: 12%;
+                    left: 24%;
+                }
+            }
+
+            @include setResponsiveDesign(560px) {
+                padding: 30px;
             }
 
             text-transform: uppercase;
@@ -184,6 +218,7 @@
                         display: inline-block;
                         margin-bottom: 12px;
                         font-size: 0.8em;
+                        font-weight: 500;
                     }
     
                     input {
