@@ -142,7 +142,14 @@
 
                     &.valid, &:focus, &:hover {
                         border-color: transparent;
-                        border-image: linear-gradient(to right, $color-linear-gradient-active-input-border);
+                        border-style: double;
+
+                        background-image:
+                            linear-gradient(to right, $color-white, $color-white),
+                            linear-gradient(to right, $color-linear-gradient-active-input-border);
+
+                        @include setBrowserCores(background-origin, border-box);
+                        @include setBrowserCores(background-clip, (padding-box, border-box));
                     }
                 }
             }

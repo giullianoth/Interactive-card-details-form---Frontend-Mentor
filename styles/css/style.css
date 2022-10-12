@@ -200,7 +200,14 @@ button {
 }
 .main_content .card_form_content input.valid, .main_content .card_form_content input:focus, .main_content .card_form_content input:hover {
   border-color: transparent;
-  border-image: linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+  border-style: double;
+  background-image: linear-gradient(to right, hsl(0deg, 0%, 100%), hsl(0deg, 0%, 100%)), linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+  background-origin: border-box;
+  -moz-background-origin: border-box;
+  -webkit-background-origin: border-box;
+  background-clip: padding-box, border-box;
+  -moz-background-clip: padding-box, border-box;
+  -webkit-background-clip: padding-box, border-box;
 }
 .main_content .card_form_success {
   display: none !important;
