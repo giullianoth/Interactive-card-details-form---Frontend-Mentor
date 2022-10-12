@@ -307,6 +307,13 @@
 
                     h2 {
                         margin-bottom: 20px;
+                        letter-spacing: 0.2em;
+                    }
+
+                    p {
+                        text-transform: none;
+                        letter-spacing: normal;
+                        color: $color-dark-grayish-violet;
                     }
                 }
 

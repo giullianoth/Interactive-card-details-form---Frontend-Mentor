@@ -396,6 +396,12 @@ button {
 }
 .main_content .card_form_success_title h2 {
   margin-bottom: 20px;
+  letter-spacing: 0.2em;
+}
+.main_content .card_form_success_title p {
+  text-transform: none;
+  letter-spacing: normal;
+  color: hsl(279deg, 6%, 55%);
 }
 .main_content .card_form_success_btn button {
   width: 100%;
