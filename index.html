@@ -29,9 +29,9 @@
           </div>
 
           <div class="card_template_front_bg_info">
-            <p class="card_template_front_bg_info_number">0000 0000 0000 0000</p>
-            <p class="card_template_front_bg_info_name">Jane Appleseed</p>
-            <p class="card_template_front_bg_info_exp_date">00/00</p>
+            <p class="card_template_front_bg_info_number j_card_template_number">---- ---- ---- ----</p>
+            <p class="card_template_front_bg_info_name j_card_template_name">---</p>
+            <p class="card_template_front_bg_info_exp_date"><span class="j_card_template_exp_date_month">--</span>/<span class="j_card_template_exp_date_year">--</span></p>
           </div>
         </div>
       </div>
@@ -41,33 +41,33 @@
           <img src="images/bg-card-back.png" alt="Card Back">
 
           <div class="card_template_back_bg_info">
-            <p class="card_template_back_bg_info_cvc">000</p>
+            <p class="card_template_back_bg_info_cvc j_card_template_cvc">---</p>
           </div>
         </div>
       </div>
     </aside>
 
     <section class="card_form">
-      <form action="" class="card_form_content" style="display:none">
-        <label class="card_form_content_name">
+      <form action="" class="card_form_content">
+        <label class="card_form_content_name j_card_label_name">
           <span>Cardholder Name</span>
-          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" class="j_card_name">
         </label>
 
-        <label class="card_form_content_number">
+        <label class="card_form_content_number j_card_label_number">
           <span>Card Number</span>
-          <input type="text" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+          <input type="text" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16" class="j_card_number">
         </label>
 
-        <label class="card_form_content_exp_date">
+        <label class="card_form_content_exp_date  j_card_label_exp_date">
           <span>Exp. Date (MM/YY)</span>
-          <input type="text" name="exp_date_month" id="exp_date_month" placeholder="MM" maxlength="2">
-          <input type="text" name="exp_date_year" id="exp_date_year" placeholder="YY" maxlength="2">
+          <input type="text" name="exp_date_month" id="exp_date_month" placeholder="MM" maxlength="2" class="j_card_exp_date_month">
+          <input type="text" name="exp_date_year" id="exp_date_year" placeholder="YY" maxlength="2" class="j_card_exp_date_year">
         </label>
 
-        <label class="card_form_content_cvc">
+        <label class="card_form_content_cvc j_card_label_cvc">
           <span>CVC</span>
-          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3">
+          <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3" class="j_card_cvc">
         </label>
 
         <div class="card_form_content_btn">
@@ -75,7 +75,7 @@
         </div>
       </form>
 
-      <div class="card_form_success">
+      <!-- <div class="card_form_success">
         <div class="card_form_success_icon">
           <img src="images/icon-complete.svg" alt="Success">
         </div>
@@ -88,7 +88,7 @@
         <div class="card_form_success_btn">
           <button>Continue</button>
         </div>
-      </div>
+      </div> -->
     </section>
   </main>
 
