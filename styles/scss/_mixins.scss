@@ -80,3 +80,21 @@
         @content;
     }
 }
+
+// Animation and Keyframes
+@mixin animation($name, $setup, $duration: 1s, $iteration-count: infinite, $timing-function: ease-in-out) {
+    animation: $name $duration $iteration-count $timing-function;
+    
+    @keyframes #{$name} {
+        @for $i from 1 through length($list: $setup) {
+
+            $frame: calc((($i * 100%) / (length($list: $setup) - 1)) - (100% / (length($list: $setup) - 1)));
+            
+            #{$frame} {
+                @each $attr, $value in nth($list: $setup, $n: $i) {
+                    #{$attr}: #{$value};
+                }
+            }
+        }
+    }
+}

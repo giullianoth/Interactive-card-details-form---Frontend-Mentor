@@ -14,7 +14,6 @@
             @include flexBasis(30%);
 
             @include relative;
-
             pointer-events: none;
 
             @include setResponsiveDesign(768px) {
@@ -26,6 +25,17 @@
                 right: -50%;
                 z-index: 3;
 
+                &.card_alert {
+                    @include animation(cardAlert, (
+                        (transform: translate(calc(-20% - 10px), calc(-100% - 15px))),
+                        (transform: translate(calc(-20% + 10px), calc(-100% - 15px))),
+                        (transform: translate(calc(-20% - 10px), calc(-100% - 15px))),
+                        (transform: translate(calc(-20% + 10px), calc(-100% - 15px))),
+                        (transform: translate(calc(-20% - 10px), calc(-100% - 15px))),
+                        (transform: translate(-20%, calc(-100% - 15px)))
+                    ), 0.3s, 1, ease-in-out);
+                }
+
                 @include setResponsiveDesign(768px) {
                     @include absoluteDisplace(55%, 50%, -75%, 0);
                     right: unset;
@@ -34,6 +44,8 @@
                 @include setResponsiveDesign(480px) {
                     @include absoluteDisplace(55%, 16px, 0, 0);
                 }
+
+
 
                 &_bg {
                     @include relative;
