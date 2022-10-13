@@ -280,7 +280,7 @@
                         border-color: $color-red-input-errors;
                     }
 
-                    &.valid, &:focus, &:hover {
+                    &:not(.error).valid, &:not(.error):focus, &:not(.error):hover {
                         border-color: transparent;
                         border-style: double;
 

@@ -370,7 +370,7 @@ button {
 .main_content .card_form_content input.error {
   border-color: hsl(0deg, 100%, 66%);
 }
-.main_content .card_form_content input.valid, .main_content .card_form_content input:focus, .main_content .card_form_content input:hover {
+.main_content .card_form_content input:not(.error).valid, .main_content .card_form_content input:not(.error):focus, .main_content .card_form_content input:not(.error):hover {
   border-color: transparent;
   border-style: double;
   background-image: linear-gradient(to right, hsl(0deg, 0%, 100%), hsl(0deg, 0%, 100%)), linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
