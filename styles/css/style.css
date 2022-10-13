@@ -173,6 +173,7 @@ button {
   color: hsl(0deg, 0%, 100%);
   text-transform: uppercase;
   padding: 30px;
+  width: 100%;
 }
 .main_content .card_template_front_bg_info_number {
   flex-basis: 100%;

@@ -85,6 +85,7 @@
                         text-transform: uppercase;
 
                         padding: 30px;
+                        width: 100%;
 
                         &_number {
                             @include flexBasis(100%);
