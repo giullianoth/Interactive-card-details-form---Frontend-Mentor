@@ -44,17 +44,16 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- Sass
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Desktop-first workflow
 
 ### Step by step of building
 
 1. HTML structuring - The framework was built using HTML5 semantics.
 2. Sass - Style Sheets were made with Sass files.
+3. Responsivity - Responsive layout was built with media queries.
+4. Form interaction - Form data is replicated in the card template, through JS file.
 
 ### What I learned
 
