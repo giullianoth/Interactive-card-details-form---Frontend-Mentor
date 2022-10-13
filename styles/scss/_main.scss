@@ -220,6 +220,14 @@
                         margin-bottom: 12px;
                         font-size: 0.8em;
                         font-weight: 500;
+
+                        &.message {
+                            font-size: 0.7em;
+                            letter-spacing: normal;
+                            text-transform: none;
+                            margin: 0;
+                            color: $color-red-input-errors;
+                        }
                     }
     
                     input {
@@ -238,7 +246,7 @@
 
                     @include flex(space-between, center, wrap);
                     column-gap: 6px;
-                    align-self: flex-end;
+                    align-self: stretch;
 
                     @include setResponsiveDesign(1024px) {
                         margin-right: 3px;
