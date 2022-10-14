@@ -23,13 +23,11 @@ const ckeckNameValue = (data) => {
     if (data === "") {
         return false;
     }
-
     for (let i = 0; i <= 9; i++) {
         if (data.includes(i)) {
             return false;
         }
     }
-
     return true;
 }
 
@@ -94,11 +92,18 @@ cardName.addEventListener("focusout", (event) => {
     let cardNameValue = cardName.value;
     let cardNameLength = cardName.value.length;
 
+    if (cardLabelName.lastElementChild.classList.contains("message")) {
+        cardLabelName.lastElementChild.remove();
+    }
+
     if (!ckeckNameValue(cardNameValue)) {
+        cardAlert(cardFront);
+        cardName.classList.add("error");
+        
         if (cardNameLength < 1) {
-            cardName.classList.add("error");
+            cardLabelName.append(errorMessage("Can't be blank"));
         } else {
-            cardName.classList.add("error");
+            cardLabelName.append(errorMessage("Invalid format, letters only"));
         }
     } else {
         cardName.classList.add("valid");
