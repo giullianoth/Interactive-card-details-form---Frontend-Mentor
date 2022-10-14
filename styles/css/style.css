@@ -100,6 +100,23 @@ button {
   right: -50%;
   z-index: 3;
 }
+@media screen and (max-width: 768px) {
+  .main_content .card_template_front {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-75%, 0);
+    right: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main_content .card_template_front {
+    position: absolute;
+    top: 55%;
+    left: 16px;
+    transform: translate(0, 0);
+  }
+}
 .main_content .card_template_front.card_alert {
   animation: cardAlert 0.3s 1 ease-in-out;
 }
@@ -124,20 +141,53 @@ button {
   }
 }
 @media screen and (max-width: 768px) {
-  .main_content .card_template_front {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-75%, 0);
-    right: unset;
+  .main_content .card_template_front.card_alert {
+    animation: cardAlert 0.3s 1 ease-in-out;
+  }
+  @keyframes cardAlert {
+    0% {
+      transform: translate(calc(-75% - 10px), 0);
+    }
+    20% {
+      transform: translate(calc(-75% + 10px), 0);
+    }
+    40% {
+      transform: translate(calc(-75% - 10px), 0);
+    }
+    60% {
+      transform: translate(calc(-75% + 10px), 0);
+    }
+    80% {
+      transform: translate(calc(-75% - 10px), 0);
+    }
+    100% {
+      transform: translate(-75%, 0);
+    }
   }
 }
 @media screen and (max-width: 480px) {
-  .main_content .card_template_front {
-    position: absolute;
-    top: 55%;
-    left: 16px;
-    transform: translate(0, 0);
+  .main_content .card_template_front.card_alert {
+    animation: cardAlert 0.3s 1 ease-in-out;
+  }
+  @keyframes cardAlert {
+    0% {
+      transform: translate(calc(0% - 10px), 0);
+    }
+    20% {
+      transform: translate(calc(0% + 10px), 0);
+    }
+    40% {
+      transform: translate(calc(0% - 10px), 0);
+    }
+    60% {
+      transform: translate(calc(0% + 10px), 0);
+    }
+    80% {
+      transform: translate(calc(0% - 10px), 0);
+    }
+    100% {
+      transform: translate(0%, 0);
+    }
   }
 }
 .main_content .card_template_front_bg {

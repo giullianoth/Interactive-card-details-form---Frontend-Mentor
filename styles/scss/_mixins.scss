@@ -98,3 +98,15 @@
         }
     }
 }
+
+// Card Alert Animation
+@mixin cardAlertAnimation($xRef, $yRef) {
+    @include animation(cardAlert, (
+        (transform: translate(calc($xRef - 10px), $yRef)),
+        (transform: translate(calc($xRef + 10px), $yRef)),
+        (transform: translate(calc($xRef - 10px), $yRef)),
+        (transform: translate(calc($xRef + 10px), $yRef)),
+        (transform: translate(calc($xRef - 10px), $yRef)),
+        (transform: translate($xRef, $yRef))
+    ), 0.3s, 1, ease-in-out);
+}
