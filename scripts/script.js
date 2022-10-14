@@ -1,6 +1,9 @@
 const cardName = document.querySelector(".j_card_name");
+const cardLabelName = document.querySelector(".j_card_label_name");
 const cardTemplateName = document.querySelector(".j_card_template_name");
 const cardFront = document.querySelector(".j_card_front");
+
+const cardNameKeysNotAccepted = ["!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "_", "{", "|", "}"];
 
 const errorMessage = (text) => {
     let spanMessage = document.createElement("span");
@@ -9,63 +12,95 @@ const errorMessage = (text) => {
     return spanMessage;
 }
 
+const cardAlert = (card) => {
+    card.classList.add("card_alert");
+    setTimeout(() => {
+        card.classList.remove("card_alert");
+    }, 300);
+}
+
+const ckeckNameValue = (data) => {
+    if (data === "") {
+        return false;
+    }
+
+    for (let i = 0; i <= 9; i++) {
+        if (data.includes(i)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 cardName.addEventListener("keyup", (event) => {
     event.preventDefault();
 
     let formChar = event.key;
     let formKeyCode = event.code;
+    let cardNameValue = cardName.value;
+    let cardNameLength = cardName.value.length;
 
-    if (cardName.value.length === 0 && !cardName.parentElement.lastElementChild.classList.contains("message")) {
-        cardFront.classList.add("card_alert");
-        cardName.classList.add("error");
-        cardName.parentElement.append(errorMessage("Can't be blank"));
+    cardName.classList.remove("error");
+
+    if (cardLabelName.lastElementChild.classList.contains("message")) {
+        cardLabelName.lastElementChild.remove();
     }
 
-    if (formKeyCode.substring(0, 3) === "Key" || formKeyCode === "Semicolon" || formKeyCode === "Space") {
+    if (formKeyCode.includes("Key") || formKeyCode === "Space" || formKeyCode === "Semicolon") {
 
-        cardFront.classList.remove("card_alert");
-        cardName.classList.remove("error");
+        if (!ckeckNameValue(cardNameValue)) {
+            cardAlert(cardFront);
+            cardName.classList.add("error");
 
-        if (cardName.parentElement.lastElementChild.classList.contains("message")) {
-            cardName.parentElement.lastElementChild.remove();
+            if (cardNameLength >= 1) {
+                cardLabelName.append(errorMessage("Invalid format, letters only"));
+            }
         }
 
-        if (cardName.value.length === 0) {
-            cardTemplateName.innerHTML = "---";
-        } else if (cardName.value.length === 1) {
-            cardTemplateName.innerHTML = "";
-            cardTemplateName.textContent += formChar;
-        } else if (cardName.value.length > 1) {
-            cardTemplateName.textContent += formChar;
+        cardTemplateName.innerText = cardNameValue;
+
+    } else if (formKeyCode === "Backspace" || formKeyCode === "Delete") {
+
+        if (!ckeckNameValue(cardNameValue)) {
+            cardAlert(cardFront);
+            cardName.classList.add("error");
+
+            if (cardNameLength >= 1) {
+                cardLabelName.append(errorMessage("Invalid format, letters only"));
+            }
         }
 
+        cardTemplateName.innerText = cardNameValue;
+
+        if (cardNameLength < 1) {
+            cardLabelName.append(errorMessage("Can't be blank"));
+            cardTemplateName.innerText = "---";
+            cardName.classList.add("error");
+        }
     } else {
-
-        if (formKeyCode === "Backspace" || formKeyCode === "Delete") {
-            if (cardName.value.length !== 0) {
-                cardTemplateName.innerHTML = cardName.value;
-            } else {
-                cardTemplateName.innerHTML = "---";
-            }
-        } else {
-
-            cardFront.classList.add("card_alert");
-            if (!cardName.parentElement.lastElementChild.classList.contains("message")) {
-                cardName.classList.add("error");
-                cardName.parentElement.append(errorMessage("Invalid format, letters only"));
-            }
-            
-            if (cardName.value.length === 0) {
-                cardFront.classList.remove("card_alert");
-                cardTemplateName.innerHTML = "---";
-            } else if (cardName.value.length === 1) {
-                cardTemplateName.innerHTML = "";
-                cardTemplateName.textContent += formChar;
-            } else if (cardName.value.length > 1) {
-                cardTemplateName.textContent += formChar;
-            }
+        if (cardNameKeysNotAccepted.includes(formChar) || formKeyCode.includes("Digit") || formKeyCode.includes("Numpad")) {
+            cardTemplateName.innerText = cardNameValue;
+            cardAlert(cardFront);
+            cardLabelName.append(errorMessage("Invalid format, letters only"));
+            cardName.classList.add("error");
         }
     }
+})
 
-    console.log(formKeyCode);
+cardName.addEventListener("focusout", (event) => {
+    event.preventDefault();
+
+    let cardNameValue = cardName.value;
+    let cardNameLength = cardName.value.length;
+
+    if (!ckeckNameValue(cardNameValue)) {
+        if (cardNameLength < 1) {
+            cardName.classList.add("error");
+        } else {
+            cardName.classList.add("error");
+        }
+    } else {
+        cardName.classList.add("valid");
+    }
 })
