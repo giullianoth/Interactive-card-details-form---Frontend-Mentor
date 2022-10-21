@@ -39,7 +39,7 @@ input {
 
     @include borderRadius;
 
-    &::-webkit-input-placeholder {
+    &::placeholder {
         color: $color-light-grayish-violet;
     }
 }

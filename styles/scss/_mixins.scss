@@ -75,15 +75,15 @@
 }
 
 // Responsive Design
-@mixin setResponsiveDesign($screenwidth) {
-    @media screen and (max-width: $screenwidth) {
+@mixin setResponsiveDesign($screenWidth) {
+    @media screen and (max-width: $screenWidth) {
         @content;
     }
 }
 
 // Animation and Keyframes
-@mixin animation($name, $setup, $duration: 1s, $iteration-count: infinite, $timing-function: ease-in-out) {
-    animation: $name $duration $iteration-count $timing-function;
+@mixin animation($name, $setup, $duration: 1s, $iterationCount: infinite, $timingFunction: ease-in-out) {
+    animation: $name $duration $iterationCount $timingFunction;
     
     @keyframes #{$name} {
         @for $i from 1 through length($list: $setup) {
