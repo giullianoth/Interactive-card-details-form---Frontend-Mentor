@@ -19,7 +19,40 @@ const validateExpdateValue = (data) => {
     if (!dataValidate.match(onlyNumbers)) {
         return false;
     }
+
     return true;
+}
+
+const validateDate = () => {
+    if (cardExpdateMonth.value && cardExpdateYear.value) {
+
+        let expDateValue = new Date(`20${cardExpdateYear.value}-${cardExpdateMonth.value}`);
+        let currentDateValue = new Date();
+        
+        cardExpdateMonth.classList.remove("error");
+        cardExpdateYear.classList.remove("error");
+        cardExpdateMonth.classList.add("valid");
+        cardExpdateYear.classList.add("valid");
+        removeMessage(cardLabelExpdate);
+
+        if (expDateValue.getTime() < currentDateValue.getTime()) {
+            cardAlert(cardFront);
+            cardExpdateMonth.classList.remove("valid");
+            cardExpdateYear.classList.remove("valid");
+            cardExpdateMonth.classList.add("error");
+            cardExpdateYear.classList.add("error");
+            cardLabelExpdate.append(errorMessage("Can't be before the current date"));
+        }
+
+        if (expDateValue == "Invalid Date") {
+            cardAlert(cardFront);
+            cardExpdateMonth.classList.remove("valid");
+            cardExpdateYear.classList.remove("valid");
+            cardExpdateMonth.classList.add("error");
+            cardExpdateYear.classList.add("error");
+            cardLabelExpdate.append(errorMessage("Invalid date"));
+        }
+    }
 }
 
 const validateExpdate = () => {
@@ -49,11 +82,11 @@ const validateExpdate = () => {
 
         if (cardExpdateMonthLength === 0) {
             removeMessage(cardLabelExpdate);
-    
+
             if (validateKey(formChar, formKeyCode)) {
                 cardAlert(cardFront);
             }
-    
+
             cardExpdateMonth.classList.remove("valid");
             cardExpdateMonth.classList.add("error");
             cardLabelExpdate.append(errorMessage("Can't be blank"));
@@ -106,6 +139,10 @@ const validateExpdate = () => {
             cardExpdateMonth.classList.add("error");
             cardLabelExpdate.append(errorMessage("Can't be blank"));
         }
+
+        if (cardExpdateMonth.value.length && cardExpdateYear.value.length) {
+            validateDate();
+        }
     })
 
     // Year
@@ -133,11 +170,11 @@ const validateExpdate = () => {
 
         if (cardExpdateYearLength === 0) {
             removeMessage(cardLabelExpdate);
-    
+
             if (validateKey(formChar, formKeyCode)) {
                 cardAlert(cardFront);
             }
-    
+
             cardExpdateYear.classList.remove("valid");
             cardExpdateYear.classList.add("error");
             cardLabelExpdate.append(errorMessage("Can't be blank"));
@@ -189,6 +226,10 @@ const validateExpdate = () => {
             cardExpdateYear.classList.remove("valid");
             cardExpdateYear.classList.add("error");
             cardLabelExpdate.append(errorMessage("Can't be blank"));
+        }
+
+        if (cardExpdateMonth.value.length && cardExpdateYear.value.length) {
+            validateDate();
         }
     })
 }
