@@ -356,11 +356,11 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  text-transform: uppercase;
   padding-top: 12%;
   padding-right: 12%;
   padding-bottom: 12%;
   padding-left: 24%;
-  text-transform: uppercase;
 }
 @media screen and (max-width: 768px) {
   .main_content .card_form {
@@ -401,6 +401,9 @@ button {
 }
 .main_content .card_form_content label input {
   width: 100%;
+}
+.main_content .card_form_content label input#exp_date_month, .main_content .card_form_content label input#exp_date_year, .main_content .card_form_content label input#cvc {
+  text-align: right;
 }
 .main_content .card_form_content_name, .main_content .card_form_content_number {
   flex-basis: 100%;

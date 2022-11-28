@@ -194,6 +194,7 @@
         &_form {
             @include flexBasis(70%);
             @include flex;
+            text-transform: uppercase;
 
             padding: {
                 top: 12%;
@@ -201,7 +202,7 @@
                 bottom: 12%;
                 left: 24%;
             }
-
+            
             @include setResponsiveDesign(768px) {
                 padding: {
                     top: 24%;
@@ -215,7 +216,6 @@
                 padding: 30px;
             }
 
-            text-transform: uppercase;
 
             &_content {
                 @include flex(space-between);
@@ -243,6 +243,10 @@
     
                     input {
                         width: 100%;
+
+                        &#exp_date_month, &#exp_date_year, &#cvc {
+                            text-align: right;
+                        }
                     }
                 }
 
