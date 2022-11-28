@@ -24,34 +24,32 @@ const validateExpdateValue = (data) => {
 }
 
 const validateDate = () => {
-    if (cardExpdateMonth.value && cardExpdateYear.value) {
 
-        let expDateValue = new Date(`20${cardExpdateYear.value}-${cardExpdateMonth.value}`);
-        let currentDateValue = new Date();
-        
-        cardExpdateMonth.classList.remove("error");
-        cardExpdateYear.classList.remove("error");
-        cardExpdateMonth.classList.add("valid");
-        cardExpdateYear.classList.add("valid");
-        removeMessage(cardLabelExpdate);
+    let expDateValue = new Date(`20${cardExpdateYear.value}-${cardExpdateMonth.value}`);
+    let currentDateValue = new Date();
 
-        if (expDateValue.getTime() < currentDateValue.getTime()) {
-            cardAlert(cardFront);
-            cardExpdateMonth.classList.remove("valid");
-            cardExpdateYear.classList.remove("valid");
-            cardExpdateMonth.classList.add("error");
-            cardExpdateYear.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be before the current date"));
-        }
+    cardExpdateMonth.classList.remove("error");
+    cardExpdateYear.classList.remove("error");
+    cardExpdateMonth.classList.add("valid");
+    cardExpdateYear.classList.add("valid");
+    removeMessage(cardLabelExpdate);
 
-        if (expDateValue == "Invalid Date") {
-            cardAlert(cardFront);
-            cardExpdateMonth.classList.remove("valid");
-            cardExpdateYear.classList.remove("valid");
-            cardExpdateMonth.classList.add("error");
-            cardExpdateYear.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Invalid date"));
-        }
+    if (expDateValue.getTime() < currentDateValue.getTime()) {
+        cardAlert(cardFront);
+        cardExpdateMonth.classList.remove("valid");
+        cardExpdateYear.classList.remove("valid");
+        cardExpdateMonth.classList.add("error");
+        cardExpdateYear.classList.add("error");
+        cardLabelExpdate.append(errorMessage("Can't be before the current date"));
+    }
+
+    if (expDateValue == "Invalid Date") {
+        cardAlert(cardFront);
+        cardExpdateMonth.classList.remove("valid");
+        cardExpdateYear.classList.remove("valid");
+        cardExpdateMonth.classList.add("error");
+        cardExpdateYear.classList.add("error");
+        cardLabelExpdate.append(errorMessage("Invalid date"));
     }
 }
 
