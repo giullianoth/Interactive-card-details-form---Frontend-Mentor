@@ -61,11 +61,10 @@ const validateNumber = () => {
 
         cardNumber.classList.remove("error");
         removeMessage(cardLabelNumber);
+        cardNumber.classList.add("valid");
         
         cardNumber.value = filterNumber(cardNumberValue, formChar);
         cardTemplateNumber.innerText = templateNumber(filterNumber(cardNumberValue, formChar));
-
-        console.log(validateNumberValue(filterPureNumber(cardNumberValue)));
 
         if (!validateNumberValue(filterPureNumber(cardNumberValue))) {
             cardAlert(cardFront);
@@ -97,7 +96,43 @@ const validateNumber = () => {
     cardNumber.addEventListener("focusout", (event) => {
         event.preventDefault();
 
-        
+        let totalNumberLength = 16;
+        let cardNumberValue = cardNumber.value;
+        let cardNumberLength = cardNumber.value.length;
+
+        cardNumber.classList.remove("error");
+        removeMessage(cardLabelNumber);
+
+        if (!validateNumberValue(filterPureNumber(cardNumberValue))) {
+            console.log(filterPureNumber(cardNumberValue));
+            cardAlert(cardFront);
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Invalid format, numbers only"));
+        }
+
+        if (filterPureNumber(cardNumberValue).length > totalNumberLength) {
+            removeMessage(cardLabelNumber);
+            cardAlert(cardFront);
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Can't be more than 16 digits"));
+        }
+
+        if (filterPureNumber(cardNumberValue).length < totalNumberLength) {
+            removeMessage(cardLabelNumber);
+            cardAlert(cardFront);
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Can't be less than 16 digits"));
+        }
+
+        if (cardNumberLength === 0) {
+            removeMessage(cardLabelNumber);
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Can't be blank"));
+        }
     })
 }
 
