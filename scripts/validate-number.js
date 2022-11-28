@@ -104,7 +104,6 @@ const validateNumber = () => {
         removeMessage(cardLabelNumber);
 
         if (!validateNumberValue(filterPureNumber(cardNumberValue))) {
-            console.log(filterPureNumber(cardNumberValue));
             cardAlert(cardFront);
             cardNumber.classList.remove("valid");
             cardNumber.classList.add("error");
