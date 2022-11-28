@@ -1,11 +1,59 @@
 import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { cardFront, cardLabelNumber, cardNumber, cardTemplateNumber, numbers } from "./variables.js";
+import { cardFront, cardLabelNumber, cardNumber, cardTemplateNumber, onlyNumbers } from "./variables.js";
+
+const templateNumber = (number) => {
+
+    let numberArray = filterPureNumber(number).split("");
+    let templateNumber = "---- ---- ---- ----".split("");
+
+    numberArray.forEach((digit, index) => {
+        if (index <= 3) {
+            templateNumber[index] = digit;
+        } else if (index > 3 && index <= 7) {
+            templateNumber[index + 1] = digit;
+        } else if (index > 7 && index <= 11) {
+            templateNumber[index + 2] = digit;
+        } else if (index > 11 && index <= 16) {
+            templateNumber[index + 3] = digit;
+        }
+    });
+
+    return templateNumber.join("");
+}
+
+const filterNumber = (data, key) => {
+    let filter = data.split("");
+
+    if (filter.length === 4 || filter.length === 9 || filter.length === 14) {
+        if (key !== "Delete" && key !== "Backspace") {
+            filter.push(" ");
+        } else {
+            filter.pop();
+        }
+    }
+
+    return filter.join("");
+}
+
+const filterPureNumber = (data) => {
+    return data.normalize("NFD").replaceAll(" ", "");
+}
+
+const validateNumberValue = (data) => {
+    let dataValidate = filterPureNumber(data);
+
+    if (!dataValidate.match(onlyNumbers)) {
+        return false;
+    }
+    return true;
+}
 
 const validateNumber = () => {
     cardNumber.addEventListener("keyup", (event) => {
         event.preventDefault();
-        
+
+        let totalNumberLength = 16;
         let formChar = event.key;
         let formKeyCode = event.code;
         let cardNumberValue = cardNumber.value;
@@ -13,13 +61,43 @@ const validateNumber = () => {
 
         cardNumber.classList.remove("error");
         removeMessage(cardLabelNumber);
+        
+        cardNumber.value = filterNumber(cardNumberValue, formChar);
+        cardTemplateNumber.innerText = templateNumber(filterNumber(cardNumberValue, formChar));
 
-        if (validateKey(formChar, formKeyCode) && (cardNumberLength === 4 || cardNumberLength === 9 || cardNumberLength === 14)) {
-            cardNumber.value += " ";
-            cardNumberValue += " ";
+        console.log(validateNumberValue(filterPureNumber(cardNumberValue)));
+
+        if (!validateNumberValue(filterPureNumber(cardNumberValue))) {
+            cardAlert(cardFront);
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Invalid format, numbers only"));
         }
+
+        if (cardNumberLength === 0) {
+            removeMessage(cardLabelNumber);
     
-        cardTemplateNumber.innerText = cardNumberValue;
+            if (validateKey(formChar, formKeyCode)) {
+                cardAlert(cardFront);
+            }
+    
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Can't be blank"));
+        }
+
+        if (filterPureNumber(cardNumberValue).length > totalNumberLength) {
+            cardAlert(cardFront);
+            cardNumber.classList.remove("valid");
+            cardNumber.classList.add("error");
+            cardLabelNumber.append(errorMessage("Can't be more than 16 digits"));
+        }
+    })
+
+    cardNumber.addEventListener("focusout", (event) => {
+        event.preventDefault();
+
+        
     })
 }
 
