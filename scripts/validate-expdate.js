@@ -40,7 +40,7 @@ const validateDate = () => {
         cardExpdateYear.classList.remove("valid");
         cardExpdateMonth.classList.add("error");
         cardExpdateYear.classList.add("error");
-        cardLabelExpdate.append(errorMessage("Can't be before the current date"));
+        cardLabelExpdate.append(errorMessage("Can't be past date"));
     }
 
     if (expDateValue == "Invalid Date") {
