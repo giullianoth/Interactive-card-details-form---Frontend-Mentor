@@ -2,6 +2,9 @@
 const cardFront = document.querySelector(".j_card_front");
 const cardBack = document.querySelector(".j_card_back");
 
+// Card Form
+const cardForm = document.querySelector(".j_card_form");
+
 // Cardholder name
 const cardName = document.querySelector(".j_card_name");
 const cardLabelName = document.querySelector(".j_card_label_name");
@@ -30,7 +33,7 @@ const numbers = /[0-9]/;
 const onlyNumbers = /^[0-9]+$/;
 
 export {
-    cardFront, cardBack,
+    cardFront, cardBack, cardForm,
     cardName, cardLabelName, cardTemplateName,
     cardNumber, cardLabelNumber, cardTemplateNumber,
     cardExpdateMonth, cardExpdateYear, cardLabelExpdate, cardTemplateExpdateMonth, cardTemplateExpdateYear,

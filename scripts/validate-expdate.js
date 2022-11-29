@@ -66,6 +66,7 @@ const validateExpdate = () => {
         let cardExpdateMonthLength = cardExpdateMonth.value.length;
 
         cardExpdateMonth.classList.remove("error");
+        cardExpdateYear.classList.remove("error");
         removeMessage(cardLabelExpdate);
         cardExpdateMonth.classList.add("valid");
 
@@ -153,6 +154,7 @@ const validateExpdate = () => {
         let cardExpdateYearValue = cardExpdateYear.value;
         let cardExpdateYearLength = cardExpdateYear.value.length;
 
+        cardExpdateMonth.classList.remove("error");
         cardExpdateYear.classList.remove("error");
         removeMessage(cardLabelExpdate);
         cardExpdateYear.classList.add("valid");
