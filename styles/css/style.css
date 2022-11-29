@@ -118,9 +118,9 @@ button {
   }
 }
 .main_content .card_template_front.card_alert {
-  animation: cardAlert 0.3s 1 ease-in-out;
+  animation: cardAlertFront 0.3s 1 ease-in-out;
 }
-@keyframes cardAlert {
+@keyframes cardAlertFront {
   0% {
     transform: translate(calc(-20% - 10px), calc(-100% - 15px));
   }
@@ -142,9 +142,9 @@ button {
 }
 @media screen and (max-width: 768px) {
   .main_content .card_template_front.card_alert {
-    animation: cardAlert 0.3s 1 ease-in-out;
+    animation: cardAlertFront 0.3s 1 ease-in-out;
   }
-  @keyframes cardAlert {
+  @keyframes cardAlertFront {
     0% {
       transform: translate(calc(-75% - 10px), 0);
     }
@@ -167,9 +167,9 @@ button {
 }
 @media screen and (max-width: 480px) {
   .main_content .card_template_front.card_alert {
-    animation: cardAlert 0.3s 1 ease-in-out;
+    animation: cardAlertFront 0.3s 1 ease-in-out;
   }
-  @keyframes cardAlert {
+  @keyframes cardAlertFront {
     0% {
       transform: translate(calc(0% - 10px), 0);
     }
@@ -298,6 +298,79 @@ button {
     right: 16px;
   }
 }
+.main_content .card_template_back.card_alert {
+  animation: cardAlertBack 0.3s 1 ease-in-out;
+}
+@keyframes cardAlertBack {
+  0% {
+    transform: translate(calc(0% - 10px), calc(0% + 15px));
+  }
+  20% {
+    transform: translate(calc(0% + 10px), calc(0% + 15px));
+  }
+  40% {
+    transform: translate(calc(0% - 10px), calc(0% + 15px));
+  }
+  60% {
+    transform: translate(calc(0% + 10px), calc(0% + 15px));
+  }
+  80% {
+    transform: translate(calc(0% - 10px), calc(0% + 15px));
+  }
+  100% {
+    transform: translate(0%, calc(0% + 15px));
+  }
+}
+@media screen and (max-width: 768px) {
+  .main_content .card_template_back.card_alert {
+    animation: cardAlertBack 0.3s 1 ease-in-out;
+  }
+  @keyframes cardAlertBack {
+    0% {
+      transform: translate(calc(-25% - 10px), -50%);
+    }
+    20% {
+      transform: translate(calc(-25% + 10px), -50%);
+    }
+    40% {
+      transform: translate(calc(-25% - 10px), -50%);
+    }
+    60% {
+      transform: translate(calc(-25% + 10px), -50%);
+    }
+    80% {
+      transform: translate(calc(-25% - 10px), -50%);
+    }
+    100% {
+      transform: translate(-25%, -50%);
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .main_content .card_template_back.card_alert {
+    animation: cardAlertBack 0.3s 1 ease-in-out;
+  }
+  @keyframes cardAlertBack {
+    0% {
+      transform: translate(calc(0% - 10px), -50%);
+    }
+    20% {
+      transform: translate(calc(0% + 10px), -50%);
+    }
+    40% {
+      transform: translate(calc(0% - 10px), -50%);
+    }
+    60% {
+      transform: translate(calc(0% + 10px), -50%);
+    }
+    80% {
+      transform: translate(calc(0% - 10px), -50%);
+    }
+    100% {
+      transform: translate(0%, -50%);
+    }
+  }
+}
 .main_content .card_template_back_bg {
   position: relative;
 }
@@ -417,7 +490,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
   column-gap: 6px;
-  align-self: stretch;
+  align-self: flex-start;
 }
 @media screen and (max-width: 1024px) {
   .main_content .card_form_content_exp_date {
@@ -436,7 +509,7 @@ button {
   flex-basis: calc(50% - 10px);
   margin-left: 10px;
   display: block;
-  align-self: flex-end;
+  align-self: flex-start;
 }
 @media screen and (max-width: 1024px) {
   .main_content .card_form_content_cvc {

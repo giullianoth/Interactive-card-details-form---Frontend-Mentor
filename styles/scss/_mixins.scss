@@ -100,8 +100,8 @@
 }
 
 // Card Alert Animation
-@mixin cardAlertAnimation($xRef, $yRef) {
-    @include animation(cardAlert, (
+@mixin cardAlertAnimation($template, $xRef, $yRef) {
+    @include animation(cardAlert#{$template}, (
         (transform: translate(calc($xRef - 10px), $yRef)),
         (transform: translate(calc($xRef + 10px), $yRef)),
         (transform: translate(calc($xRef - 10px), $yRef)),

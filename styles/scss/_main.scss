@@ -32,17 +32,17 @@
 
                 @include setResponsiveDesign(480px) {
                     @include absoluteDisplace(55%, 16px, 0, 0);
-                }                
+                }
 
                 &.card_alert {                    
-                    @include cardAlertAnimation(-20%, calc(-100% - 15px));
+                    @include cardAlertAnimation("Front", -20%, calc(-100% - 15px));
 
                     @include setResponsiveDesign(768px) {                        
-                        @include cardAlertAnimation(-75%, 0);
+                        @include cardAlertAnimation("Front", -75%, 0);
                     }
 
                     @include setResponsiveDesign(480px) {
-                        @include cardAlertAnimation(0%, 0);
+                        @include cardAlertAnimation("Front", 0%, 0);
                     }
                 }
 
@@ -138,6 +138,18 @@
                 @include setResponsiveDesign(480px) {
                     @include absoluteDisplace(50%, unset, 0, -50%);
                     right: 16px;
+                }
+
+                &.card_alert {                    
+                    @include cardAlertAnimation("Back", 0%, calc(0% + 15px));
+
+                    @include setResponsiveDesign(768px) {                        
+                        @include cardAlertAnimation("Back", -25%, -50%);
+                    }
+
+                    @include setResponsiveDesign(480px) {
+                        @include cardAlertAnimation("Back", 0%, -50%);
+                    }
                 }
 
                 &_bg {
@@ -261,7 +273,7 @@
 
                     @include flex(space-between, center, wrap);
                     column-gap: 6px;
-                    align-self: stretch;
+                    align-self: flex-start;
 
                     @include setResponsiveDesign(1024px) {
                         margin-right: 3px;
@@ -282,7 +294,7 @@
                     @include flexBasis(50%, 10px);
                     margin-left: 10px;
                     display: block;
-                    align-self: flex-end;
+                    align-self: flex-start;
 
                     @include setResponsiveDesign(1024px) {
                         margin-left: 3px;
