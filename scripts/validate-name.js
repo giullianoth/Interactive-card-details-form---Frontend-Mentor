@@ -1,6 +1,5 @@
-import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { validateNameValue } from "./validate.js";
+import { cardAlert, validateKey, validateNameValue } from "./validate.js";
 import { accentuation, cardFront, cardLabelName, cardName, cardTemplateName } from "./variables.js";
 
 const filterName = (data) => {

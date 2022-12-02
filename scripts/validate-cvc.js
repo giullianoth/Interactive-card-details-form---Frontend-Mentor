@@ -1,7 +1,6 @@
-import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { validateCVCValue } from "./validate.js";
-import { cardBack, cardCvc, cardLabelCvc, cardTemplateCvc } from "./variables.js";
+import { cardAlert, filterPureNumber, validateCVCValue, validateKey } from "./validate.js";
+import { cardBack, cardCvc, cardLabelCvc, cardTemplateCvc, totalCvcLength } from "./variables.js";
 
 const templateCVC = (cvc) => {
     let cvcArray = cvc.split("");
@@ -18,7 +17,6 @@ const validateCVC = () => {
     cardCvc.addEventListener("keyup", (event) => {
         event.preventDefault();
 
-        let totalCvcLength = 3;
         let formChar = event.key;
         let formKeyCode = event.code;
         let cardCvcValue = cardCvc.value;
@@ -28,7 +26,7 @@ const validateCVC = () => {
         removeMessage(cardLabelCvc);
         cardCvc.classList.add("valid");
 
-        cardTemplateCvc.innerText = templateCVC(cardCvcValue);
+        cardTemplateCvc.innerText = templateCVC(filterPureNumber(cardCvcValue));
 
         if (!validateCVCValue(cardCvcValue)) {
             cardAlert(cardBack);
@@ -60,7 +58,6 @@ const validateCVC = () => {
     cardCvc.addEventListener("focusout", (event) => {
         event.preventDefault();
 
-        let totalCvcLength = 3;
         let cardCvcValue = cardCvc.value;
         let cardCvcLength = cardCvc.value.length;
 

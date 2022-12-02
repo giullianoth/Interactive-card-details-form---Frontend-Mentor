@@ -1,7 +1,6 @@
-import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { isAfterCurrentDate, validateDate, validateExpdateValue } from "./validate.js";
-import { cardExpdateMonth, cardExpdateYear, cardFront, cardLabelExpdate, cardTemplateExpdateMonth, cardTemplateExpdateYear } from "./variables.js";
+import { cardAlert, isAfterCurrentDate, validateDate, validateExpdateValue, validateKey } from "./validate.js";
+import { cardExpdateMonth, cardExpdateYear, cardFront, cardLabelExpdate, cardTemplateExpdateMonth, cardTemplateExpdateYear, totalExpdateLength } from "./variables.js";
 
 const templateExpdate = (date) => {
     let dateArray = date.split("");
@@ -20,7 +19,6 @@ const validateExpdate = () => {
     cardExpdateMonth.addEventListener("keyup", (event) => {
         event.preventDefault();
 
-        let totalExpdateMonthLength = 2;
         let formChar = event.key;
         let formKeyCode = event.code;
         let cardExpdateMonthValue = cardExpdateMonth.value;
@@ -52,7 +50,7 @@ const validateExpdate = () => {
             cardLabelExpdate.append(errorMessage("Can't be blank"));
         }
 
-        if (cardExpdateMonthLength > totalExpdateMonthLength) {
+        if (cardExpdateMonthLength > totalExpdateLength) {
             cardAlert(cardFront);
             cardExpdateMonth.classList.remove("valid");
             cardExpdateMonth.classList.add("error");
@@ -63,7 +61,6 @@ const validateExpdate = () => {
     cardExpdateMonth.addEventListener("focusout", (event) => {
         event.preventDefault();
 
-        let totalExpdateMonthLength = 2;
         let cardExpdateMonthValue = cardExpdateMonth.value;
         let cardExpdateMonthLength = cardExpdateMonth.value.length;
 
@@ -77,7 +74,7 @@ const validateExpdate = () => {
             cardLabelExpdate.append(errorMessage("Invalid format, numbers only"));
         }
 
-        if (cardExpdateMonthLength > totalExpdateMonthLength) {
+        if (cardExpdateMonthLength > totalExpdateLength) {
             removeMessage(cardLabelExpdate);
             cardAlert(cardFront);
             cardExpdateMonth.classList.remove("valid");
@@ -85,7 +82,7 @@ const validateExpdate = () => {
             cardLabelExpdate.append(errorMessage("Can't be more than 2 digits"));
         }
 
-        if (cardExpdateMonthLength < totalExpdateMonthLength) {
+        if (cardExpdateMonthLength < totalExpdateLength) {
             removeMessage(cardLabelExpdate);
             cardAlert(cardFront);
             cardExpdateMonth.classList.remove("valid");
@@ -126,7 +123,6 @@ const validateExpdate = () => {
     cardExpdateYear.addEventListener("keyup", (event) => {
         event.preventDefault();
 
-        let totalExpdateYearLength = 2;
         let formChar = event.key;
         let formKeyCode = event.code;
         let cardExpdateYearValue = cardExpdateYear.value;
@@ -158,7 +154,7 @@ const validateExpdate = () => {
             cardLabelExpdate.append(errorMessage("Can't be blank"));
         }
 
-        if (cardExpdateYearLength > totalExpdateYearLength) {
+        if (cardExpdateYearLength > totalExpdateLength) {
             cardAlert(cardFront);
             cardExpdateYear.classList.remove("valid");
             cardExpdateYear.classList.add("error");
@@ -169,7 +165,6 @@ const validateExpdate = () => {
     cardExpdateYear.addEventListener("focusout", (event) => {
         event.preventDefault();
 
-        let totalExpdateYearLength = 2;
         let cardExpdateYearValue = cardExpdateYear.value;
         let cardExpdateYearLength = cardExpdateYear.value.length;
 
@@ -183,7 +178,7 @@ const validateExpdate = () => {
             cardLabelExpdate.append(errorMessage("Invalid format, numbers only"));
         }
 
-        if (cardExpdateYearLength > totalExpdateYearLength) {
+        if (cardExpdateYearLength > totalExpdateLength) {
             removeMessage(cardLabelExpdate);
             cardAlert(cardFront);
             cardExpdateYear.classList.remove("valid");
@@ -191,7 +186,7 @@ const validateExpdate = () => {
             cardLabelExpdate.append(errorMessage("Can't be more than 2 digits"));
         }
 
-        if (cardExpdateYearLength < totalExpdateYearLength) {
+        if (cardExpdateYearLength < totalExpdateLength) {
             removeMessage(cardLabelExpdate);
             cardAlert(cardFront);
             cardExpdateYear.classList.remove("valid");

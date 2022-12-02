@@ -1,7 +1,6 @@
-import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { filterPureNumber, validateNumberValue } from "./validate.js";
-import { cardFront, cardLabelNumber, cardNumber, cardTemplateNumber } from "./variables.js";
+import { cardAlert, filterPureNumber, validateKey, validateNumberValue } from "./validate.js";
+import { cardFront, cardLabelNumber, cardNumber, cardTemplateNumber, totalNumberLength } from "./variables.js";
 
 const templateNumber = (number) => {
 
@@ -38,8 +37,6 @@ const filterNumber = (data, key) => {
 }
 
 const validateNumber = () => {
-
-    let totalNumberLength = 16;
 
     cardNumber.addEventListener("keyup", (event) => {
         event.preventDefault();
