@@ -501,14 +501,21 @@ button {
 .main_content .card_form_content_exp_date span {
   flex-basis: 100%;
 }
+.main_content .card_form_content_exp_date span:first-child {
+  height: 36px;
+}
 .main_content .card_form_content_exp_date input {
   width: auto;
   flex-basis: calc(50% - 6px);
+  margin-bottom: 5px;
 }
 .main_content .card_form_content_cvc {
   flex-basis: calc(50% - 10px);
   margin-left: 10px;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   align-self: flex-start;
 }
 @media screen and (max-width: 1024px) {
@@ -516,6 +523,12 @@ button {
     margin-left: 3px;
     flex-basis: calc(50% - 6px);
   }
+}
+.main_content .card_form_content_cvc span:first-child {
+  height: 36px;
+}
+.main_content .card_form_content_cvc input {
+  margin-bottom: 5px;
 }
 .main_content .card_form_content_btn {
   flex-basis: 100%;

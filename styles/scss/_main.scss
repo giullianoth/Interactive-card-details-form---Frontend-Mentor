@@ -282,23 +282,38 @@
 
                     span {
                         @include flexBasis(100%);
+
+                        &:first-child {
+                            height: 36px;
+                        }
                     }
 
                     input {
                         width: auto;
                         @include flexBasis(50%, 6px);
+                        margin-bottom: 5px;
                     }
                 }
 
                 &_cvc {
                     @include flexBasis(50%, 10px);
                     margin-left: 10px;
-                    display: block;
+                    @include flex(space-between, center, wrap);
                     align-self: flex-start;
 
                     @include setResponsiveDesign(1024px) {
                         margin-left: 3px;
                         @include flexBasis(50%, 6px);
+                    }
+
+                    span {
+                        &:first-child {
+                            height: 36px;
+                        }
+                    }
+                    
+                    input {
+                        margin-bottom: 5px;
                     }
                 }
 
