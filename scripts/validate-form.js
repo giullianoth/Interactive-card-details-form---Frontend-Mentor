@@ -1,17 +1,7 @@
 import { errorMessage, removeMessage } from "./message.js";
-import { cardAlert, filterPureNumber, isAfterCurrentDate, validateCVCValue, validateDate, validateExpdateValue, validateNumberValue } from "./validate.js";
-import { accentuation, cardBack, cardCvc, cardExpdateMonth, cardExpdateYear, cardForm, cardFront, cardLabelCvc, cardLabelExpdate, cardLabelName, cardLabelNumber, cardName, cardNumber, numbers, specialChars, totalCvcLength, totalExpdateLength, totalNumberLength } from "./variables.js";
-
-const validateNameValue = (data) => {
-
-    let dataValidate = data.normalize("NFD").replace(accentuation, "");
-
-    if (dataValidate.match(specialChars) || dataValidate.match(numbers)) {
-        return false;
-    }
-
-    return true;
-}
+import success from "./success.js";
+import { cardAlert, filterPureNumber, isAfterCurrentDate, validateCVCValue, validateDate, validateExpdateValue, validateNameValue, validateNumberValue } from "./validate.js";
+import { cardBack, cardCvc, cardExpdateMonth, cardExpdateYear, cardForm, cardFront, cardLabelCvc, cardLabelExpdate, cardLabelName, cardLabelNumber, cardName, cardNumber, cardTemplateName, totalCvcLength, totalExpdateLength, totalNumberLength } from "./variables.js";
 
 const validateForm = () => {
 
@@ -198,7 +188,14 @@ const validateForm = () => {
         }
 
         if (valid) {
-            console.log("Tudo certo!");
+            console.log({
+                card_name: cardTemplateName.innerText,
+                card_number: filterPureNumber(cardNumberValue),
+                card_exp_date: `${cardExpdateMonthValue}/${cardExpdateYearValue}`,
+                card_cvc: cardCvcValue
+            });
+
+            success();
         }
     })
 }
