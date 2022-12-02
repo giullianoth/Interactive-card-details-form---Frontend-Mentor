@@ -42,6 +42,8 @@ const validateForm = () => {
 
         if (valid) {
             console.log("Tudo certo");
+        } else {
+            console.log("Não, porra!");
         }
     })
 }

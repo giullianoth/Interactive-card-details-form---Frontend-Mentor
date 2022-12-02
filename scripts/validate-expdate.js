@@ -1,6 +1,7 @@
 import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { cardExpdateMonth, cardExpdateYear, cardFront, cardLabelExpdate, cardTemplateExpdateMonth, cardTemplateExpdateYear, onlyNumbers } from "./variables.js";
+import { isAfterCurrentDate, validateDate, validateExpdateValue } from "./validate.js";
+import { cardExpdateMonth, cardExpdateYear, cardFront, cardLabelExpdate, cardTemplateExpdateMonth, cardTemplateExpdateYear } from "./variables.js";
 
 const templateExpdate = (date) => {
     let dateArray = date.split("");
@@ -11,46 +12,6 @@ const templateExpdate = (date) => {
     });
 
     return templateDate.join("");
-}
-
-const validateExpdateValue = (data) => {
-    let dataValidate = data.normalize("NFD").replaceAll(" ", "");
-
-    if (!dataValidate.match(onlyNumbers)) {
-        return false;
-    }
-
-    return true;
-}
-
-const validateDate = () => {
-
-    let expDateValue = new Date(`20${cardExpdateYear.value}-${cardExpdateMonth.value}`);
-    let currentDateValue = new Date();
-
-    cardExpdateMonth.classList.remove("error");
-    cardExpdateYear.classList.remove("error");
-    cardExpdateMonth.classList.add("valid");
-    cardExpdateYear.classList.add("valid");
-    removeMessage(cardLabelExpdate);
-
-    if (expDateValue.getTime() < currentDateValue.getTime()) {
-        cardAlert(cardFront);
-        cardExpdateMonth.classList.remove("valid");
-        cardExpdateYear.classList.remove("valid");
-        cardExpdateMonth.classList.add("error");
-        cardExpdateYear.classList.add("error");
-        cardLabelExpdate.append(errorMessage("Can't be past date"));
-    }
-
-    if (expDateValue == "Invalid Date") {
-        cardAlert(cardFront);
-        cardExpdateMonth.classList.remove("valid");
-        cardExpdateYear.classList.remove("valid");
-        cardExpdateMonth.classList.add("error");
-        cardExpdateYear.classList.add("error");
-        cardLabelExpdate.append(errorMessage("Invalid date"));
-    }
 }
 
 const validateExpdate = () => {
@@ -140,7 +101,24 @@ const validateExpdate = () => {
         }
 
         if (cardExpdateMonth.value.length && cardExpdateYear.value.length) {
-            validateDate();
+            
+            if (!validateDate(cardExpdateMonthValue, cardExpdateYear.value)) {
+                cardAlert(cardFront);
+                cardExpdateMonth.classList.remove("valid");
+                cardExpdateYear.classList.remove("valid");
+                cardExpdateMonth.classList.add("error");
+                cardExpdateYear.classList.add("error");
+                cardLabelExpdate.append(errorMessage("Invalid date"));
+            }
+
+            if (!isAfterCurrentDate(cardExpdateMonthValue, cardExpdateYear.value)) {
+                cardAlert(cardFront);
+                cardExpdateMonth.classList.remove("valid");
+                cardExpdateYear.classList.remove("valid");
+                cardExpdateMonth.classList.add("error");
+                cardExpdateYear.classList.add("error");
+                cardLabelExpdate.append(errorMessage("Can't be past date"));
+            }
         }
     })
 
@@ -229,7 +207,24 @@ const validateExpdate = () => {
         }
 
         if (cardExpdateMonth.value.length && cardExpdateYear.value.length) {
-            validateDate();
+
+            if (!validateDate(cardExpdateMonth.value, cardExpdateYearValue)) {
+                cardAlert(cardFront);
+                cardExpdateMonth.classList.remove("valid");
+                cardExpdateYear.classList.remove("valid");
+                cardExpdateMonth.classList.add("error");
+                cardExpdateYear.classList.add("error");
+                cardLabelExpdate.append(errorMessage("Invalid date"));
+            }
+
+            if (!isAfterCurrentDate(cardExpdateMonth.value, cardExpdateYearValue)) {
+                cardAlert(cardFront);
+                cardExpdateMonth.classList.remove("valid");
+                cardExpdateYear.classList.remove("valid");
+                cardExpdateMonth.classList.add("error");
+                cardExpdateYear.classList.add("error");
+                cardLabelExpdate.append(errorMessage("Can't be past date"));
+            }
         }
     })
 }

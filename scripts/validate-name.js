@@ -1,17 +1,7 @@
 import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { accentuation, cardFront, cardLabelName, cardName, cardTemplateName, numbers, specialChars } from "./variables.js";
-
-const validateNameValue = (data) => {
-
-    let dataValidate = data.normalize("NFD").replace(accentuation, "");
-
-    if (dataValidate.match(specialChars) || dataValidate.match(numbers)) {
-        return false;
-    }
-
-    return true;
-}
+import { validateNameValue } from "./validate.js";
+import { accentuation, cardFront, cardLabelName, cardName, cardTemplateName } from "./variables.js";
 
 const filterName = (data) => {
     let filter = data.normalize("NFD").replace(accentuation, "");

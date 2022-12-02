@@ -27,6 +27,7 @@ const cardCvc = document.querySelector(".j_card_cvc");
 const cardLabelCvc = document.querySelector(".j_card_label_cvc");
 const cardTemplateCvc = document.querySelector(".j_card_template_cvc");
 
+// Chars in regex
 const accentuation = /[\u0300-\u036f]/g;
 const specialChars = /[^a-zA-Z 0-9]+/g;
 const numbers = /[0-9]/;

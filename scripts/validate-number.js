@@ -1,6 +1,7 @@
 import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { cardFront, cardLabelNumber, cardNumber, cardTemplateNumber, onlyNumbers } from "./variables.js";
+import { filterPureNumber, validateNumberValue } from "./validate.js";
+import { cardFront, cardLabelNumber, cardNumber, cardTemplateNumber } from "./variables.js";
 
 const templateNumber = (number) => {
 
@@ -36,24 +37,13 @@ const filterNumber = (data, key) => {
     return filter.join("");
 }
 
-const filterPureNumber = (data) => {
-    return data.normalize("NFD").replaceAll(" ", "");
-}
-
-const validateNumberValue = (data) => {
-    let dataValidate = filterPureNumber(data);
-
-    if (!dataValidate.match(onlyNumbers)) {
-        return false;
-    }
-    return true;
-}
-
 const validateNumber = () => {
+
+    let totalNumberLength = 16;
+
     cardNumber.addEventListener("keyup", (event) => {
         event.preventDefault();
 
-        let totalNumberLength = 16;
         let formChar = event.key;
         let formKeyCode = event.code;
         let cardNumberValue = cardNumber.value;
@@ -96,7 +86,6 @@ const validateNumber = () => {
     cardNumber.addEventListener("focusout", (event) => {
         event.preventDefault();
 
-        let totalNumberLength = 16;
         let cardNumberValue = cardNumber.value;
         let cardNumberLength = cardNumber.value.length;
 

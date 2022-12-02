@@ -1,6 +1,7 @@
 import { cardAlert, validateKey } from "./alerts.js";
 import { errorMessage, removeMessage } from "./message.js";
-import { cardBack, cardCvc, cardLabelCvc, cardTemplateCvc, onlyNumbers } from "./variables.js";
+import { validateCVCValue } from "./validate.js";
+import { cardBack, cardCvc, cardLabelCvc, cardTemplateCvc } from "./variables.js";
 
 const templateCVC = (cvc) => {
     let cvcArray = cvc.split("");
@@ -11,16 +12,6 @@ const templateCVC = (cvc) => {
     });
 
     return templateCvc.join("");
-}
-
-const validateCVCValue = (data) => {
-    let dataValidate = data.normalize("NFD").replaceAll(" ", "");
-
-    if (!dataValidate.match(onlyNumbers)) {
-        return false;
-    }
-
-    return true;
 }
 
 const validateCVC = () => {
