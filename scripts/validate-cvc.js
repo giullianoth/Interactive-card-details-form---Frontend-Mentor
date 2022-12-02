@@ -51,7 +51,7 @@ const validateCVC = () => {
             cardAlert(cardBack);
             cardCvc.classList.remove("valid");
             cardCvc.classList.add("error");
-            cardLabelCvc.append(errorMessage("Can't be more than 3 digits"));
+            cardLabelCvc.append(errorMessage(`Can't be more than ${totalCvcLength} digits`));
         }
     })
 
@@ -76,7 +76,7 @@ const validateCVC = () => {
             cardAlert(cardBack);
             cardCvc.classList.remove("valid");
             cardCvc.classList.add("error");
-            cardLabelCvc.append(errorMessage("Can't be more than 3 digits"));
+            cardLabelCvc.append(errorMessage(`Can't be more than ${totalCvcLength} digits`));
         }
 
         if (cardCvcLength < totalCvcLength) {
@@ -84,7 +84,7 @@ const validateCVC = () => {
             cardAlert(cardBack);
             cardCvc.classList.remove("valid");
             cardCvc.classList.add("error");
-            cardLabelCvc.append(errorMessage("Can't be less than 3 digits"));
+            cardLabelCvc.append(errorMessage(`Can't be less than ${totalCvcLength} digits`));
         }
 
         if (cardCvcLength === 0) {

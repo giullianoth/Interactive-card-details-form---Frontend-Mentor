@@ -54,7 +54,7 @@ const validateExpdate = () => {
             cardAlert(cardFront);
             cardExpdateMonth.classList.remove("valid");
             cardExpdateMonth.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be more than 2 digits in 'month'"));
+            cardLabelExpdate.append(errorMessage(`Can't be more than ${totalExpdateLength} digits in 'month'`));
         }
     })
 
@@ -79,7 +79,7 @@ const validateExpdate = () => {
             cardAlert(cardFront);
             cardExpdateMonth.classList.remove("valid");
             cardExpdateMonth.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be more than 2 digits"));
+            cardLabelExpdate.append(errorMessage(`Can't be more than ${totalExpdateLength} digits in 'month'`));
         }
 
         if (cardExpdateMonthLength < totalExpdateLength) {
@@ -87,7 +87,7 @@ const validateExpdate = () => {
             cardAlert(cardFront);
             cardExpdateMonth.classList.remove("valid");
             cardExpdateMonth.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be less than 2 digits"));
+            cardLabelExpdate.append(errorMessage(`Can't be less than ${totalExpdateLength} digits in 'month'`));
         }
 
         if (cardExpdateMonthLength === 0) {
@@ -158,7 +158,7 @@ const validateExpdate = () => {
             cardAlert(cardFront);
             cardExpdateYear.classList.remove("valid");
             cardExpdateYear.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be more than 2 digits in 'Year'"));
+            cardLabelExpdate.append(errorMessage(`Can't be more than ${totalExpdateLength} digits in 'year'`));
         }
     })
 
@@ -183,7 +183,7 @@ const validateExpdate = () => {
             cardAlert(cardFront);
             cardExpdateYear.classList.remove("valid");
             cardExpdateYear.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be more than 2 digits"));
+            cardLabelExpdate.append(errorMessage(`Can't be more than ${totalExpdateLength} digits in 'year'`));
         }
 
         if (cardExpdateYearLength < totalExpdateLength) {
@@ -191,7 +191,7 @@ const validateExpdate = () => {
             cardAlert(cardFront);
             cardExpdateYear.classList.remove("valid");
             cardExpdateYear.classList.add("error");
-            cardLabelExpdate.append(errorMessage("Can't be less than 2 digits"));
+            cardLabelExpdate.append(errorMessage(`Can't be more than ${totalExpdateLength} digits in 'year'`));
         }
 
         if (cardExpdateYearLength === 0) {

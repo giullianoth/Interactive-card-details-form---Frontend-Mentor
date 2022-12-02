@@ -76,7 +76,7 @@ const validateNumber = () => {
             cardAlert(cardFront);
             cardNumber.classList.remove("valid");
             cardNumber.classList.add("error");
-            cardLabelNumber.append(errorMessage("Can't be more than 16 digits"));
+            cardLabelNumber.append(errorMessage(`Can't be more than ${totalNumberLength} digits`));
         }
     })
 
@@ -101,7 +101,7 @@ const validateNumber = () => {
             cardAlert(cardFront);
             cardNumber.classList.remove("valid");
             cardNumber.classList.add("error");
-            cardLabelNumber.append(errorMessage("Can't be more than 16 digits"));
+            cardLabelNumber.append(errorMessage(`Can't be more than ${totalNumberLength} digits`));
         }
 
         if (filterPureNumber(cardNumberValue).length < totalNumberLength) {
@@ -109,7 +109,7 @@ const validateNumber = () => {
             cardAlert(cardFront);
             cardNumber.classList.remove("valid");
             cardNumber.classList.add("error");
-            cardLabelNumber.append(errorMessage("Can't be less than 16 digits"));
+            cardLabelNumber.append(errorMessage(`Can't be less than ${totalNumberLength} digits`));
         }
 
         if (cardNumberLength === 0) {
