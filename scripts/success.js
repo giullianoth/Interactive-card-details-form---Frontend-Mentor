@@ -1,4 +1,4 @@
-const reload = () => { location.reload() }
+const reload = () => location.reload();
 
 const successArea = () => {
     let successArea = document.createElement("div");
