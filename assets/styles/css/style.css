@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  color: hsl(278, 68%, 11%);
+  letter-spacing: 0.1em;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+@media screen and (min-width: 1200px) {
+  body {
+    flex-direction: row;
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease 0s;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+}
+
+input {
+  border: 1px solid hsl(270, 3%, 87%);
+  font-size: 1em;
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+  color: hsl(278, 68%, 11%);
+  padding: 16px;
+  outline: none;
+  border-radius: 10px;
+}
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+button {
+  font-size: 1em;
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 0.1em;
+  padding: 16px;
+  border: none;
+  background-color: hsl(278, 68%, 11%);
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.card-header h1 {
+  display: none;
+}
+
+.card-template {
+  width: 100%;
+  background-image: url("../../../assets/images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 240px;
+  margin-bottom: 120px;
+}
+@media screen and (min-width: 768px) {
+  .card-template {
+    height: 280px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-template {
+    flex-basis: 32%;
+    height: 100vh;
+    margin: 0;
+    background-image: url("../../../assets/images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+.card-template__container {
+  max-width: 420px;
+  margin-inline: auto;
+  height: 100%;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .card-template__container {
+    max-width: 560px;
+  }
+}
+.card-template__back img, .card-template__front img {
+  width: 290px;
+}
+@media screen and (min-width: 768px) {
+  .card-template__back img, .card-template__front img {
+    width: 340px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-template__back img, .card-template__front img {
+    width: 440px;
+  }
+}
+.card-template__back {
+  position: absolute;
+  top: 40px;
+  left: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  right: 0;
+  margin-inline: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .card-template__back {
+    right: unset;
+    top: 52%;
+    left: 40%;
+    width: 440px;
+  }
+}
+.card-template__cvc {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  text-align: right;
+  padding-inline: 12%;
+  color: hsl(0, 0%, 100%);
+  font-size: 0.6em;
+}
+@media screen and (min-width: 1200px) {
+  .card-template__cvc {
+    font-size: 1em;
+  }
+}
+.card-template__front {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-inline: 20px;
+}
+@media screen and (min-width: 768px) {
+  .card-template__front {
+    top: 150px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card-template__front {
+    top: unset;
+    bottom: 52%;
+    left: 30%;
+    margin: 0;
+    width: 440px;
+  }
+}
+.card-template__front-wrapper {
+  position: absolute;
+  top: unset;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.card-template__logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+}
+.card-template__number {
+  flex-basis: 100%;
+  color: hsl(0, 0%, 100%);
+}
+@media screen and (min-width: 1200px) {
+  .card-template__number {
+    font-size: 1.6em;
+  }
+}
+.card-template__name, .card-template__exp-date {
+  color: hsl(0, 0%, 100%);
+  font-size: 0.6em;
+}
+@media screen and (min-width: 1200px) {
+  .card-template__name, .card-template__exp-date {
+    font-size: 1em;
+  }
+}

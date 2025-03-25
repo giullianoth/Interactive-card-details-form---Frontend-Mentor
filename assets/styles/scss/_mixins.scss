@@ -1,0 +1,100 @@
+// THEME
+@mixin theme() {
+    .card- {
+        @content;
+    }
+}
+
+// CONTAINER
+@mixin containerFluid($fillScreen: false) {
+    width: 100%;
+
+    @if $fillScreen == true {
+        height: 100%;
+    }
+}
+
+// FLEXBOX
+@mixin flex($justifyContent: center, $alignItems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap !=0 {
+        flex-basis: calc($basis - $gap);
+    }
+
+    @else {
+        flex-basis: $basis;
+    }
+}
+
+// POSITION
+// Relative
+@mixin relative() {
+    position: relative;
+}
+
+// Absolute
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin absoluteFull($top: 0, $left: 0, $fillScreen: false) {
+    @include absolute($top, $left);
+    @include containerFluid($fillScreen);
+}
+
+// BACKGROUND IMAGE
+@mixin backgroundImage($image: "", $repeat: no-repeat, $size: cover, $position: center center) {
+    @if $image != "" {
+        background-image: url("#{$image-path}/#{$image}");
+    }
+
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+// TRANSITIONS AND ANIMATIONS
+@mixin transition($property: all, $duration: $transition-duration-default, $timingFunction: ease, $delay: 0s) {
+    transition: $property $duration $timingFunction $delay;
+}
+
+@mixin animation($name, $setup, $duration: 1s, $iterationCount: infinite, $timingFunction: linear) {
+    animation: $name $duration $iterationCount $timingFunction;
+    
+    @keyframes #{$name} {
+        @for $i from 1 through length($list: $setup) {
+
+            $frame: calc((($i * 100%) / (length($list: $setup) - 1)) - (100% / (length($list: $setup) - 1)));
+            
+            #{$frame} {
+                @each $attr, $value in nth($list: $setup, $n: $i) {
+                    #{$attr}: #{$value};
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE DESIGN
+@mixin setResponsiveDesign($screenWidth, $smallerScreen: false) {    
+
+    @if $smallerScreen == true {
+        @media screen and (max-width: $screenWidth) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (min-width: $screenWidth) {
+            @content;
+        }
+    }
+}

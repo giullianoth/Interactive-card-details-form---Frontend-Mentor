@@ -1,0 +1,117 @@
+@include theme() {
+    &template {
+        @include containerFluid;
+        @include backgroundImage("bg-main-mobile.png");
+        height: 240px;
+        margin-bottom: 120px;
+
+        @include setResponsiveDesign(768px) {
+            height: 280px;
+        }
+
+        @include setResponsiveDesign(1200px) {
+            flex-basis: 32%;
+            height: 100vh;
+            margin: 0;
+            @include backgroundImage("bg-main-desktop.png");
+        }
+
+        &__container {
+            max-width: 420px;
+            margin-inline: auto;
+            height: 100%;
+            @include relative;
+
+            @include setResponsiveDesign(768px) {
+                max-width: 560px;
+            }
+        }
+
+        &__back img, &__front img {
+            width: 290px;
+
+            @include setResponsiveDesign(768px) {
+                width: 340px;
+            }
+
+            @include setResponsiveDesign(1200px) {
+                width: 440px;
+            }
+        }
+
+        &__back {
+            @include absolute(40px, unset);
+            @include flex;
+            right: 0;
+            margin-inline: 20px;
+
+            @include setResponsiveDesign(1200px) {
+                right: unset;
+                top: 52%;
+                left: 40%;
+                width: 440px;
+            }
+        }
+
+        &__cvc {
+            @include absoluteFull(45%);
+            text-align: right;
+            padding-inline: 12%;
+            color: $color-white;
+            font-size: 0.6em;
+
+            @include setResponsiveDesign(1200px) {
+                font-size: 1em;
+            }
+        }
+
+        &__front {
+            @include absolute(140px);
+            @include flex;
+            margin-inline: 20px;
+
+            @include setResponsiveDesign(768px) {
+                top: 150px;
+            }
+
+            @include setResponsiveDesign(1200px) {
+                top: unset;
+                bottom: 52%;
+                left: 30%;
+                margin: 0;
+                width: 440px;
+            }
+
+            &-wrapper {
+                @include absoluteFull(unset);
+                bottom: 0;
+                padding: 20px;
+                @include flex(space-between, center);
+                gap: 10px;
+            }
+        }
+
+        &__logo {
+            @include absolute(20px, 20px);
+            width: 50px;
+        }
+
+        &__number {
+            @include flexBasis(100%);
+            color: $color-white;
+
+            @include setResponsiveDesign(1200px) {
+                font-size: 1.6em
+            }
+        }
+
+        &__name, &__exp-date {
+            color: $color-white;
+            font-size: 0.6em;
+
+            @include setResponsiveDesign(1200px) {
+                font-size: 1em;
+            }
+        }
+    }
+}

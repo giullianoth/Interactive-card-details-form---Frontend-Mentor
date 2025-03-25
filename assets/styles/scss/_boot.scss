@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    min-height: 100vh;
+    font-size: $font-size-default;
+    font-family: $font-space-grotesk;
+    color: $color-very-dark-violet;
+    letter-spacing: 0.1em;
+    @include relative;
+    @include flex(flex-start, stretch, nowrap);
+    flex-direction: column;
+
+    @include setResponsiveDesign(1200px) {
+        flex-direction: row;
+    }
+}
+
+main {
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    @include transition;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+}
+
+input {
+    border: 1px solid $color-light-grayish-violet;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: $font-space-grotesk;
+    color: $color-very-dark-violet;
+    padding: 16px;
+    outline: none;
+    border-radius: $radius-default;
+
+    &::placeholder {
+        color: $color-light-grayish-violet;
+    }
+}
+
+button {
+    font-size: 1em;
+    color: $color-white;
+    letter-spacing: 0.1em;
+    padding: 16px;
+    border: none;
+    background-color: $color-very-dark-violet;
+    cursor: pointer;
+    border-radius: $radius-default;
+}
