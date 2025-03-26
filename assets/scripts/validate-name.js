@@ -27,8 +27,7 @@ export default function ValidateName() {
     })
 
     cardName.addEventListener("focusout", event => {
-        let cardNameValue = event.target.value
-        let cardNameLength = cardNameValue.length
+        let cardNameLength = event.target.value.length
 
         if (!cardNameLength) {
             cardAlertAnimate(cardFront)

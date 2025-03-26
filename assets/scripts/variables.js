@@ -21,21 +21,21 @@ export const cardNameMaxLength = 25
 
 // Card number
 export const cardNumberLabel = document.querySelector(".j_card_form_number")
-export const cartNumberTemplate = document.querySelector("j_card_template_number")
+export const cardNumberTemplate = document.querySelector(".j_card_template_number")
 export const cardNumber = cardNumberLabel.querySelector("#number")
 export const cardNumberMaxLength = 16
 
 // Card expiration date
 export const cardExpdateLabel = document.querySelector(".j_card_form_expdate")
-export const cartExpdateMonthTemplate = document.querySelector("j_card_template_expdate_month")
-export const cartExpdateYearTemplate = document.querySelector("j_card_template_expdate_year")
+export const cardExpdateMonthTemplate = document.querySelector(".j_card_template_expdate_month")
+export const cardExpdateYearTemplate = document.querySelector(".j_card_template_expdate_year")
 export const cardExpdateMonth = cardNumberLabel.querySelector("#exp-date-month")
 export const cardExpdateYear = cardNumberLabel.querySelector("#exp-date-year")
 export const cardExpdateMaxLength = 2
 
 // Card CVC
 export const cardCvcLabel = document.querySelector(".j_card_form_cvc")
-export const cartCvcTemplate = document.querySelector("j_card_template_cvc")
+export const cardCvcTemplate = document.querySelector(".j_card_template_cvc")
 export const cardCvc = cardNumberLabel.querySelector("#cvc")
 export const cardCvcMaxLength = 3
 
@@ -47,3 +47,6 @@ export const accentuation = /[\u0300-\u036f]/g
 export const specialChars = /[^a-zA-Z 0-9]+/g
 export const numbers = /[0-9]/
 export const onlyNumbers = /^[0-9]+$/
+
+export const pureNumber = num => num.normalize("NFD").replaceAll(" ", "")
+export const isValidNumber = num => pureNumber(num).match(onlyNumbers)
