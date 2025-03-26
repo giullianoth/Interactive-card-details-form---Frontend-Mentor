@@ -15,8 +15,6 @@ export default function ValidateName() {
             errorMessage("Can't be blank", "name", cardNameLabel)
         }
 
-        console.log(cardNameLength);
-
         if (cardNameLength <= cardNameMaxLength) {
             cardNameTemplate.innerText = cardNameLength
                 ? cardNameValue
