@@ -56,6 +56,10 @@
                     text-transform: uppercase;
                     font-weight: 500;
                     font-size: 0.7em;
+
+                    @include setResponsiveDesign(768px) {
+                        font-size: initial;
+                    }
                 }
 
                 input {
@@ -87,6 +91,7 @@
                     letter-spacing: normal;
                     color: $color-red-input-errors;
                     margin-top: 6px;
+                    height: 16px;
                 }
             }
         }

@@ -306,6 +306,11 @@ button {
   font-weight: 500;
   font-size: 0.7em;
 }
+@media screen and (min-width: 768px) {
+  .card-register__form-row label {
+    font-size: initial;
+  }
+}
 .card-register__form-row input {
   width: 100%;
   transition: all 0.3s ease 0s;
@@ -328,6 +333,7 @@ button {
   letter-spacing: normal;
   color: hsl(0, 100%, 66%);
   margin-top: 6px;
+  height: 16px;
 }
 
 .card-confirm {
