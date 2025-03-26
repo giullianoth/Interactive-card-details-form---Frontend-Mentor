@@ -50,12 +50,12 @@ export default function ValidateNumber() {
         let cardNumberValue = event.target.value
         let cardNumberLength = pureNumber(cardNumberValue).length
 
-        if (!cardNumberLength) {
+        if (cardNumberLength === 0) {
             cardAlertAnimate(cardFront)
             errorMessage("Can't be blank", "number", cardNumberLabel)
         }
 
-        if (!isValidNumber(cardNumberValue)) {
+        if (cardNumberLength > 0 && !isValidNumber(cardNumberValue)) {
             cardAlertAnimate(cardFront)
             errorMessage("Wrong format, numbers only", "number", cardNumberLabel)
         }
@@ -85,12 +85,12 @@ export default function ValidateNumber() {
 
         if (cardNumberLength < cardNumberMaxLength) {
             cardAlertAnimate(cardFront)
-            errorMessage("Can't be less than 16 digits", "number", cardNumberLabel)
+            errorMessage(`Can't be less than ${cardNumberMaxLength} digits`, "number", cardNumberLabel)
         }
 
         if (cardNumberLength > cardNumberMaxLength) {
             cardAlertAnimate(cardFront)
-            errorMessage("Can't be more than 16 digits", "number", cardNumberLabel)
+            errorMessage(`Can't be more than ${cardNumberMaxLength} digits`, "number", cardNumberLabel)
         }
     })
 }

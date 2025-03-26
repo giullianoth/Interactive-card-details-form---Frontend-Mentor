@@ -29,14 +29,14 @@ export const cardNumberMaxLength = 16
 export const cardExpdateLabel = document.querySelector(".j_card_form_expdate")
 export const cardExpdateMonthTemplate = document.querySelector(".j_card_template_expdate_month")
 export const cardExpdateYearTemplate = document.querySelector(".j_card_template_expdate_year")
-export const cardExpdateMonth = cardNumberLabel.querySelector("#exp-date-month")
-export const cardExpdateYear = cardNumberLabel.querySelector("#exp-date-year")
+export const cardExpdateMonth = cardExpdateLabel.querySelector("#exp-date-month")
+export const cardExpdateYear = cardExpdateLabel.querySelector("#exp-date-year")
 export const cardExpdateMaxLength = 2
 
 // Card CVC
 export const cardCvcLabel = document.querySelector(".j_card_form_cvc")
 export const cardCvcTemplate = document.querySelector(".j_card_template_cvc")
-export const cardCvc = cardNumberLabel.querySelector("#cvc")
+export const cardCvc = cardCvcLabel.querySelector("#cvc")
 export const cardCvcMaxLength = 3
 
 // Card message Alert
