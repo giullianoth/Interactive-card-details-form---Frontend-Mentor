@@ -286,7 +286,7 @@ button {
   flex-wrap: wrap;
   column-gap: 10px;
 }
-.card-register__form-row.exp-date label {
+.card-register__form-row.exp-date label, .card-register__form-row.exp-date .message {
   flex-basis: 100%;
 }
 .card-register__form-row.exp-date input {

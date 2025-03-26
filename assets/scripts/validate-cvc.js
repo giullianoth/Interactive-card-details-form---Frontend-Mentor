@@ -41,17 +41,17 @@ export default function ValidateCvc() {
         let cardCvcValue = pureNumber(event.target.value)
         let cardCvcLength = cardCvcValue.length
 
-        if (!cardCvcLength) {
+        if (cardCvcLength === 0) {
             cardAlertAnimate(cardBack)
             errorMessage("Can't be blank", "cvc", cardCvcLabel)
         }
 
-        if (!isValidNumber(cardCvcValue)) {
+        if (cardCvcLength > 0 && !isValidNumber(cardCvcValue)) {
             cardAlertAnimate(cardBack)
             errorMessage("Wrong format, numbers only", "cvc", cardCvcLabel)
         }
 
-        if (cardCvcLength < cardCvcMaxLength) {
+        if (cardCvcLength > 0 && cardCvcLength < cardCvcMaxLength) {
             cardAlertAnimate(cardBack)
             errorMessage(`Can't be less than ${cardCvcMaxLength} digits`, "cvc", cardCvcLabel)
         }

@@ -32,7 +32,7 @@
                     @include flex;
                     column-gap: 10px;
 
-                    label {
+                    label, .message {
                         @include flex1;
                     }
 
