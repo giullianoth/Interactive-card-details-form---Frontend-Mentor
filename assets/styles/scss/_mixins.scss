@@ -32,6 +32,14 @@
     }
 }
 
+@mixin flex1($gap: 0) {
+    @include flexBasis(100%, $gap);
+}
+
+@mixin flex2($gap: 0) {
+    @include flexBasis(calc(100% / 2), calc($gap - ($gap / 2)));
+}
+
 // POSITION
 // Relative
 @mixin relative() {

@@ -97,7 +97,7 @@
         }
 
         &__number {
-            @include flexBasis(100%);
+            @include flex1;
             color: $color-white;
 
             @include setResponsiveDesign(1200px) {

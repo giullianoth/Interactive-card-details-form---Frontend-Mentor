@@ -1,0 +1,93 @@
+@include theme() {
+    &register {
+        max-width: 480px;
+        margin-inline: auto;
+        margin-bottom: 80px;
+        padding-inline: 20px;
+
+        @include setResponsiveDesign(1024px) {
+            max-width: 600px;
+        }
+
+        @include setResponsiveDesign(1200px) {
+            margin-bottom: 0;
+            height: 100%;
+            @include flex;
+            padding-left: 120px;
+        }
+
+        &__form {
+            @include flex;
+            gap: 20px;
+
+            &-row {
+                @include flex1;
+
+                &.half {
+                    @include flex2(20px);
+                }
+
+                &.exp-date {
+                    @include flex;
+                    column-gap: 10px;
+
+                    label {
+                        @include flex1;
+                    }
+
+                    input {
+                        @include flex2(10px);
+                        text-align: right;
+                    }
+                }
+
+                &.cvc {
+                    align-self: flex-end;
+
+                    input {
+                        text-align: right;
+                    }
+                }
+
+                label {
+                    display: block;
+                    margin-bottom: 12px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 0.7em;
+                }
+
+                input {
+                    width: 100%;
+                    @include transition;
+
+                    &.error {
+                        border-color: $color-red-input-errors;
+                    }
+
+                    &:not(.error).valid, &:not(.error):focus, &:not(.error):hover {
+                        border-color: transparent;
+                        border-style: double;
+                        background-origin: border-box;
+                        background-clip: padding-box, border-box;
+
+                        background-image:
+                            linear-gradient(to right, $color-white, $color-white),
+                            linear-gradient(to right, $color-linear-gradient-active-input-border);
+                    }
+                }
+
+                button {
+                    width: 100%;
+                }
+
+                .message {
+                    font-size: 0.7em;
+                    letter-spacing: normal;
+                    color: $color-red-input-errors;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
