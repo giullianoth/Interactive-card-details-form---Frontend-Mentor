@@ -1,0 +1,14 @@
+@include theme() {
+    &attribution {
+        font-size: 11px;
+        text-align: center;
+        letter-spacing: normal;
+        padding: 20px;
+
+        @include setResponsiveDesign(1200px) {
+            @include absolute(unset, unset);
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

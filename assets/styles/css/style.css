@@ -302,3 +302,19 @@ button {
   color: hsl(0, 100%, 66%);
   margin-top: 6px;
 }
+
+.card-attribution {
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: normal;
+  padding: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .card-attribution {
+    position: absolute;
+    top: unset;
+    left: unset;
+    right: 0;
+    bottom: 0;
+  }
+}
