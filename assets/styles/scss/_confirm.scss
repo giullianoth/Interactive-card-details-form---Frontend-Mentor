@@ -1,0 +1,28 @@
+@include theme() {
+    &confirm {
+        text-align: center;
+        width: 100%;
+
+        img {
+            margin-bottom: 40px;
+        }
+
+        &__title {
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        &__subtitle {
+            letter-spacing: normal;
+            color: $color-dark-grayish-violet;
+            margin-bottom: 40px;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}

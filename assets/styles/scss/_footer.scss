@@ -4,11 +4,16 @@
         text-align: center;
         letter-spacing: normal;
         padding: 20px;
+        color: $color-dark-grayish-violet;
 
         @include setResponsiveDesign(1200px) {
             @include absolute(unset, unset);
             right: 0;
             bottom: 0;
+        }
+
+        a {
+            color: hsl(278, 68%, 11%);
         }
     }
 }

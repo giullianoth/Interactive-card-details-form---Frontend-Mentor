@@ -74,7 +74,7 @@
     transition: $property $duration $timingFunction $delay;
 }
 
-@mixin animation($name, $setup, $duration: 1s, $iterationCount: infinite, $timingFunction: linear) {
+@mixin animation($name, $setup, $duration: 1s, $iterationCount: f, $timingFunction: linear) {
     animation: $name $duration $iterationCount $timingFunction;
     
     @keyframes #{$name} {

@@ -19,6 +19,7 @@
         &__form {
             @include flex;
             gap: 20px;
+            width: 100%;
 
             &-row {
                 @include flex1;

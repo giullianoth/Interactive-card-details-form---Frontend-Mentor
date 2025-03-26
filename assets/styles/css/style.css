@@ -271,6 +271,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 .card-register__form-row {
   flex-basis: 100%;
@@ -329,11 +330,35 @@ button {
   margin-top: 6px;
 }
 
+.card-confirm {
+  text-align: center;
+  width: 100%;
+}
+.card-confirm img {
+  margin-bottom: 40px;
+}
+.card-confirm__title {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.card-confirm__subtitle {
+  letter-spacing: normal;
+  color: hsl(279, 6%, 55%);
+  margin-bottom: 40px;
+}
+.card-confirm button {
+  width: 100%;
+}
+
 .card-attribution {
   font-size: 11px;
   text-align: center;
   letter-spacing: normal;
   padding: 20px;
+  color: hsl(279, 6%, 55%);
 }
 @media screen and (min-width: 1200px) {
   .card-attribution {
@@ -343,4 +368,7 @@ button {
     right: 0;
     bottom: 0;
   }
+}
+.card-attribution a {
+  color: hsl(278, 68%, 11%);
 }
