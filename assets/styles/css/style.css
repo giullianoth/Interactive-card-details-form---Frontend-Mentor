@@ -121,6 +121,29 @@ button {
     width: 440px;
   }
 }
+.card-template .alert {
+  animation: cardAlert 0.3s 1 ease-in-out;
+}
+@keyframes cardAlert {
+  0% {
+    transform: translateX(10px);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: none;
+  }
+}
 .card-template__back {
   position: absolute;
   top: 40px;
@@ -142,13 +165,14 @@ button {
 }
 .card-template__cvc {
   position: absolute;
-  top: 45%;
+  top: 44%;
   left: 0;
   width: 100%;
   text-align: right;
   padding-inline: 12%;
   color: hsl(0, 0%, 100%);
   font-size: 0.6em;
+  pointer-events: none;
 }
 @media screen and (min-width: 1200px) {
   .card-template__cvc {
@@ -201,6 +225,7 @@ button {
 .card-template__number {
   flex-basis: 100%;
   color: hsl(0, 0%, 100%);
+  pointer-events: none;
 }
 @media screen and (min-width: 1200px) {
   .card-template__number {
@@ -210,6 +235,7 @@ button {
 .card-template__name, .card-template__exp-date {
   color: hsl(0, 0%, 100%);
   font-size: 0.6em;
+  pointer-events: none;
 }
 @media screen and (min-width: 1200px) {
   .card-template__name, .card-template__exp-date {
