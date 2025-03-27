@@ -1,12 +1,12 @@
 import { cardAlertAnimate, errorMessage, removeErrorMessage } from "./card-alert.js"
-import { cardExpdateLabel, cardExpdateMaxLength, cardExpdateMonth, cardExpdateMonthTemplate, cardExpdateYear, cardExpdateYearTemplate, cardFront, isValidNumber, pureNumber } from "./variables.js"
+import { cardData, cardExpdateLabel, cardExpdateMaxLength, cardExpdateMonth, cardExpdateMonthTemplate, cardExpdateYear, cardExpdateYearTemplate, cardFront, isValidNumber, pureNumber } from "./variables.js"
 
-const isValidDate = (month, year) => {
+export const isValidDate = (month, year) => {
     let date = new Date(`20${year}-${month}`)
     return date != "Invalid Date"
 }
 
-const isNotPastDate = (month, year) => {
+export const isNotPastDate = (month, year) => {
     let date = new Date(`20${year}-${month}`)
     let currentDate = new Date()
 
@@ -99,6 +99,7 @@ export default function ValidateExpDate() {
                 cardExpdateYear.classList.remove("error")
                 cardExpdateMonth.classList.add("valid")
                 cardExpdateYear.classList.add("valid")
+                cardData.expirationDate = `${pureNumber(cardExpdateMonthValue)}/${pureNumber(cardExpdateYear.value)}`
             }
         }
     })
@@ -179,8 +180,8 @@ export default function ValidateExpDate() {
                 cardExpdateYear.classList.remove("error")
                 cardExpdateMonth.classList.add("valid")
                 cardExpdateYear.classList.add("valid")
-            }
-            
+                cardData.expirationDate = `${pureNumber(cardExpdateMonth.value)}/${pureNumber(cardExpdateYearValue)}`
+            }            
         }
     })
 }

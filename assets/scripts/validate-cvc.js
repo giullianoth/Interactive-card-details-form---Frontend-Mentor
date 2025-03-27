@@ -1,5 +1,5 @@
 import { cardAlertAnimate, errorMessage, removeErrorMessage } from "./card-alert.js"
-import { cardBack, cardCvc, cardCvcLabel, cardCvcMaxLength, cardCvcTemplate, isValidNumber, pureNumber } from "./variables.js"
+import { cardBack, cardCvc, cardCvcLabel, cardCvcMaxLength, cardCvcTemplate, cardData, isValidNumber, pureNumber } from "./variables.js"
 
 const cvcTemplate = num => {
     let cvcArray = num.split("")
@@ -68,6 +68,7 @@ export default function ValidateCvc() {
 
         if (valid) {
             cardCvc.classList.add("valid")
+            cardData.cvc = Number(pureNumber(cardCvcValue))
         }
     })
 }

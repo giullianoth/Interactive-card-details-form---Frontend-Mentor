@@ -42,6 +42,9 @@ export const cardCvcMaxLength = 3
 // Card message Alert
 export const messageAlert = label =>  label.querySelector(".message")
 
+// Reload button
+export const reloadButton = () => document.querySelector(".j_reload")
+
 // Characters
 export const accentuation = /[\u0300-\u036f]/g
 export const specialChars = /[^a-zA-Z 0-9]+/g

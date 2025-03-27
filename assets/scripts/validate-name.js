@@ -1,5 +1,5 @@
 import { cardAlertAnimate, errorMessage, removeErrorMessage } from "./card-alert.js"
-import { accentuation, cardFront, cardName, cardNameLabel, cardNameMaxLength, cardNameTemplate, specialChars } from "./variables.js"
+import { accentuation, cardData, cardFront, cardName, cardNameLabel, cardNameMaxLength, cardNameTemplate, specialChars } from "./variables.js"
 
 export default function ValidateName() {
     cardName.addEventListener("input", event => {
@@ -38,6 +38,7 @@ export default function ValidateName() {
 
         if (valid) {
             cardName.classList.add("valid")
+            cardData.name = cardNameTemplate.innerText
         }
     })
 }

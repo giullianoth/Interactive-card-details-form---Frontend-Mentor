@@ -1,5 +1,5 @@
 import { cardAlertAnimate, errorMessage, removeErrorMessage } from "./card-alert.js"
-import { cardFront, cardNumber, cardNumberLabel, cardNumberMaxLength, cardNumberTemplate, isValidNumber,  pureNumber } from "./variables.js"
+import { cardData, cardFront, cardNumber, cardNumberLabel, cardNumberMaxLength, cardNumberTemplate, isValidNumber,  pureNumber } from "./variables.js"
 
 const numberTemplate = num => {
     let numArray = pureNumber(num).split("")
@@ -100,6 +100,7 @@ export default function ValidateNumber() {
 
         if (valid) {
             cardNumber.classList.add("valid")
+            cardData.number = Number(pureNumber(cardNumberValue))
         }
     })
 }
