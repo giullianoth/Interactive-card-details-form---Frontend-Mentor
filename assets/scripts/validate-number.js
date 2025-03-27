@@ -70,27 +70,36 @@ export default function ValidateNumber() {
     })
 
     cardNumber.addEventListener("focusout", event => {
+        let valid = true
         let cardNumberValue = event.target.value
         let cardNumberLength = pureNumber(cardNumberValue).length
 
         if (cardNumberLength === 0) {
             cardAlertAnimate(cardFront)
             errorMessage("Can't be blank", "number", cardNumberLabel)
+            valid = false
         }
 
         if (cardNumberLength > 0 && !isValidNumber(cardNumberValue)) {
             cardAlertAnimate(cardFront)
             errorMessage("Wrong format, numbers only", "number", cardNumberLabel)
+            valid = false
         }
 
         if (cardNumberLength > 0 && cardNumberLength < cardNumberMaxLength) {
             cardAlertAnimate(cardFront)
             errorMessage(`Can't be less than ${cardNumberMaxLength} digits`, "number", cardNumberLabel)
+            valid = false
         }
 
         if (cardNumberLength > cardNumberMaxLength) {
             cardAlertAnimate(cardFront)
             errorMessage(`Can't be more than ${cardNumberMaxLength} digits`, "number", cardNumberLabel)
+            valid = false
+        }
+
+        if (valid) {
+            cardNumber.classList.add("valid")
         }
     })
 }

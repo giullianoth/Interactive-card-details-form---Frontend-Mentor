@@ -38,27 +38,36 @@ export default function ValidateCvc() {
     })
 
     cardCvc.addEventListener("focusout", event => {
+        let valid = true
         let cardCvcValue = pureNumber(event.target.value)
         let cardCvcLength = cardCvcValue.length
 
         if (cardCvcLength === 0) {
             cardAlertAnimate(cardBack)
             errorMessage("Can't be blank", "cvc", cardCvcLabel)
+            valid = false
         }
 
         if (cardCvcLength > 0 && !isValidNumber(cardCvcValue)) {
             cardAlertAnimate(cardBack)
             errorMessage("Wrong format, numbers only", "cvc", cardCvcLabel)
+            valid = false
         }
 
         if (cardCvcLength > 0 && cardCvcLength < cardCvcMaxLength) {
             cardAlertAnimate(cardBack)
             errorMessage(`Can't be less than ${cardCvcMaxLength} digits`, "cvc", cardCvcLabel)
+            valid = false
         }
 
         if (cardCvcLength > cardCvcMaxLength) {
             cardAlertAnimate(cardBack)
             errorMessage(`Can't be more than ${cardCvcMaxLength} digits`, "cvc", cardCvcLabel)
+            valid = false
+        }
+
+        if (valid) {
+            cardCvc.classList.add("valid")
         }
     })
 }

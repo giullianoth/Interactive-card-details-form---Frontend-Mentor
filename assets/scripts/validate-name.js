@@ -27,11 +27,17 @@ export default function ValidateName() {
     })
 
     cardName.addEventListener("focusout", event => {
+        let valid = true
         let cardNameLength = event.target.value.length
 
         if (!cardNameLength) {
             cardAlertAnimate(cardFront)
             errorMessage("Can't be blank", "name", cardNameLabel)
+            valid = false
+        }
+
+        if (valid) {
+            cardName.classList.add("valid")
         }
     })
 }
