@@ -1,6 +1,18 @@
 import { cardAlertAnimate, errorMessage, removeErrorMessage } from "./card-alert.js"
 import { cardExpdateLabel, cardExpdateMaxLength, cardExpdateMonth, cardExpdateMonthTemplate, cardExpdateYear, cardExpdateYearTemplate, cardFront, isValidNumber, pureNumber } from "./variables.js"
 
+const isValidDate = (month, year) => {
+    let date = new Date(`20${year}-${month}`)
+    return date != "Invalid Date"
+}
+
+const isNotPastDate = (month, year) => {
+    let date = new Date(`20${year}-${month}`)
+    let currentDate = new Date()
+
+    return date.getTime() > currentDate.getTime()
+}
+
 const dateTemplate = num => {
     let dateArray = num.split("")
     let template = "--".split("")
@@ -9,7 +21,6 @@ const dateTemplate = num => {
 
     return template.join("")
 }
-
 
 export default function ValidateExpDate() {
 
@@ -25,13 +36,13 @@ export default function ValidateExpDate() {
 
         if (cardExpdateMonthLength === 0) {
             cardAlertAnimate(cardFront)
-            errorMessage("Can't be blank", "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage("Can't be blank", "exp-date-year", cardExpdateLabel)
         }
 
         if (cardExpdateMonthLength > 0 && !isValidNumber(cardExpdateMonthValue)) {
             cardAlertAnimate(cardFront)
-            errorMessage("Wrong format, numbers only", "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage("Wrong format, numbers only", "exp-date-year", cardExpdateLabel)
         }
 
@@ -49,24 +60,42 @@ export default function ValidateExpDate() {
 
         if (cardExpdateMonthLength === 0) {
             cardAlertAnimate(cardFront)
-            errorMessage("Can't be blank", "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage("Can't be blank", "exp-date-year", cardExpdateLabel)
         }
 
         if (cardExpdateMonthLength > 0 && !isValidNumber(cardExpdateMonthValue)) {
             cardAlertAnimate(cardFront)
-            errorMessage("Wrong format, numbers only", "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage("Wrong format, numbers only", "exp-date-year", cardExpdateLabel)
         }
 
         if (cardExpdateMonthLength > 0 && cardExpdateMonthLength < cardExpdateMaxLength) {
             cardExpdateMonth.value = `0${cardExpdateMonthValue}`
+            cardExpdateMonthTemplate.innerText = `0${cardExpdateMonthValue}`
         }
 
         if (cardExpdateMonthLength > cardExpdateMaxLength) {
             cardAlertAnimate(cardFront)
-            errorMessage(`Month can't be more than ${cardExpdateMaxLength} digits`, "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage(`Month can't be more than ${cardExpdateMaxLength} digits`, "exp-date-year", cardExpdateLabel)
+        }
+
+        if (cardExpdateMonth.value.length === cardExpdateMaxLength
+            && cardExpdateYear.value.length === cardExpdateMaxLength) {
+            if (!isValidDate(cardExpdateMonth.value, cardExpdateYear.value)) {
+                cardAlertAnimate(cardFront)
+                errorMessage("", "exp-date-month", cardExpdateLabel)
+                errorMessage("Invalid date", "exp-date-year", cardExpdateLabel)
+            }
+
+            if (isValidDate(cardExpdateMonth.value, cardExpdateYear.value)
+                && !isNotPastDate(cardExpdateMonth.value, cardExpdateYear.value)) {
+                cardAlertAnimate(cardFront)
+                errorMessage("", "exp-date-month", cardExpdateLabel)
+                errorMessage("Can't be past date", "exp-date-year", cardExpdateLabel)
+            }
+            
         }
     })
 
@@ -82,13 +111,13 @@ export default function ValidateExpDate() {
 
         if (cardExpdateYearLength === 0) {
             cardAlertAnimate(cardFront)
-            errorMessage("Can't be blank", "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage("Can't be blank", "exp-date-year", cardExpdateLabel)
         }
 
         if (cardExpdateYearLength > 0 && !isValidNumber(cardExpdateYearValue)) {
             cardAlertAnimate(cardFront)
-            errorMessage("Wrong format, numbers only", "exp-date-month", cardExpdateLabel)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
             errorMessage("Wrong format, numbers only", "exp-date-year", cardExpdateLabel)
         }
 
@@ -98,5 +127,51 @@ export default function ValidateExpDate() {
         }
 
         cardExpdateYearTemplate.innerText = dateTemplate(cardExpdateYearValue)
+    })
+
+    cardExpdateYear.addEventListener("focusout", event => {
+        let cardExpdateYearValue = pureNumber(event.target.value)
+        let cardExpdateYearLength = cardExpdateYearValue.length
+
+        if (cardExpdateYearLength === 0) {
+            cardAlertAnimate(cardFront)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
+            errorMessage("Can't be blank", "exp-date-year", cardExpdateLabel)
+        }
+
+        if (cardExpdateYearLength > 0 && !isValidNumber(cardExpdateYearValue)) {
+            cardAlertAnimate(cardFront)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
+            errorMessage("Wrong format, numbers only", "exp-date-year", cardExpdateLabel)
+        }
+
+        if (cardExpdateYearLength > 0 && cardExpdateYearLength < cardExpdateMaxLength) {
+            cardAlertAnimate(cardFront)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
+            errorMessage(`Year can't be less than ${cardExpdateMaxLength} digits`, "exp-date-year", cardExpdateLabel)
+        }
+
+        if (cardExpdateYearLength > cardExpdateMaxLength) {
+            cardAlertAnimate(cardFront)
+            errorMessage("", "exp-date-month", cardExpdateLabel)
+            errorMessage(`Year can't be more than ${cardExpdateMaxLength} digits`, "exp-date-year", cardExpdateLabel)
+        }
+
+        if (cardExpdateMonth.value.length === cardExpdateMaxLength
+            && cardExpdateYear.value.length === cardExpdateMaxLength) {
+            if (!isValidDate(cardExpdateMonth.value, cardExpdateYear.value)) {
+                cardAlertAnimate(cardFront)
+                errorMessage("", "exp-date-month", cardExpdateLabel)
+                errorMessage("Invalid date", "exp-date-year", cardExpdateLabel)
+            }
+
+            if (isValidDate(cardExpdateMonth.value, cardExpdateYear.value)
+                && !isNotPastDate(cardExpdateMonth.value, cardExpdateYear.value)) {
+                cardAlertAnimate(cardFront)
+                errorMessage("", "exp-date-month", cardExpdateLabel)
+                errorMessage("Can't be past date", "exp-date-year", cardExpdateLabel)
+            }
+            
+        }
     })
 }
