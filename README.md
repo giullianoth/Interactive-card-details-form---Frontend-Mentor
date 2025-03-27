@@ -1,105 +1,163 @@
 # Frontend Mentor - Interactive card details form
 
-![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)
+[![Interactive card details form](/assets/design/desktop-preview.jpg)](https://interactive-card-details-form-gules.vercel.app/)
 
-## Welcome! 👋
+[![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS 3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat&logo=sass&logoColor=white)](https://sass-lang.com/)
 
-Thanks for checking out this front-end coding challenge.
+**Disponível em | Available in: Português - BR | English**
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+Esta é uma solução para o desafio do [formulário interativo de detalhes do cartão no Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação construindo projetos realistas. Construída para fins acadêmicos, foram aplicadas as tecnologias e boas práticas do web design e desenvolvimento front-end.
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+*This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. Built for academic purposes, web design and front-end development technologies and good practices were applied.*
 
-## The challenge
+## Status do projeto | Project status
 
-Your challenge is to build out this interactive card details form and get it looking as close to the design as possible.
+Projeto finalizado, sendo aberto a propostas de melhorias ou correções.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+*Finalized project, being open to proposals for improvements or corrections.*
 
-Your users should be able to: 
+## Layout
 
-- Fill in the form and see the card details update in real-time
-- Receive error messages when the form is submitted if:
-  - Any input field is empty
-  - The card number, expiry date, or CVC fields are in the wrong format
-- View the optimal layout depending on their device's screen size
-- See hover, active, and focus states for interactive elements on the page
+Construído a partir do método *mobile-first*, o projeto é responsivo, ou seja, é adaptável aos mais variados tamanhos e resoluções de telas, conforme demonstrado a seguir.
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+*Built from the mobile-first method, the project is responsive, that is, it is adaptable to the most varied sizes and screen resolutions, as shown below.*
 
-### Expected behaviour
+![Captura de tela em 375px | Screenshot in 375px](assets/images/screenshots/screenshot_375px.jpeg)
 
-- Update the details on the card as the user fills in the fields
-- Validate the form fields when the form is submitted
-- If there are no errors, display the completed state
-- Reset the form when the user clicks "Continue" on the completed state
+Captura de tela em 375px | Screenshot in 375px
 
-**⚠️ IMPORTANT ⚠️: When you create the live version of your project, we recommmend giving it a random name for the URL. This is because with it being a fake credit card form, some browsers will open a warning notice before people can access your project. So it's best to name the project something unrelated to credit cards so that browsers don't show the warning to people viewing your project.**
+---
 
-## Where to find everything
+![Captura de tela em 768px | Screenshot in 768px](assets/images/screenshots/screenshot_768px.jpeg)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+Captura de tela em 768px | Screenshot in 768px
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+---
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+![Captura de tela em 1440px | Screenshot in 1440px](assets/images/screenshots/screenshot_1440px.jpeg)
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+Captura de tela em 1440px | Screenshot in 1440px
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+---
 
-## Building your project
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+Você também pode conferir a página acessando este link: [https://interactive-card-details-form-gules.vercel.app/](https://interactive-card-details-form-gules.vercel.app/).
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+**Observação:** Por se tratar de um projeto para fins acadêmicos, os links contidos na página não funcionarão, exceto os dois últimos localizados no rodapé.
 
-## Deploying your project
+*You can also check the page by accessing this link: [https://interactive-card-details-form-gules.vercel.app/](https://interactive-card-details-form-gules.vercel.app/).*
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+_**Note:** As this is a project for academic purposes, the links on the page will not work, except for the last two located at the footer._
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+## Tecnologias utilizadas | Technologies used
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+Foram utilizadas as seguintes tecnologias para a construção desta página:
 
-## Create a custom `README.md`
+*The following technologies were used to build this page:*
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+- [HTML 5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS 3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Sass](https://sass-lang.com/)
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+Vale lembrar que foram aplicados o uso de tags semânticas ao HTML, para tornar a página com acessibilidade facilitada e seguir as boas práticas do desenvolvimento web.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+O uso do preprocessador CSS (nesse caso o Sass) torna mais produtiva a aplicação das folhas de estilo, o que possibilita a manutenibilidade posteriormente.
 
-## Submitting your solution
+*It is worth remembering that the use of semantic tags was applied to the HTML, to make the page easier to access and follow the good practices of web development.*
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+*Using the CSS preprocessor (in this case Sass) makes the application of stylesheets more productive, which enables later maintainability.*
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+## Como instalar | How to install
 
-## Sharing your solution
+Para baixar e instalar o projeto no seu computador, siga os seguintes passos:
 
-There are multiple places you can share your solution:
+- Instale o editor [VS Code](https://code.visualstudio.com/) (recomendo fortemente, mas se há outro editor do seu gosto, não tem problema) e abra o projeto nele.
+- Se você está usando VS Code, instale a extensão "[Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)", ela que vai converter seu Sass em CSS. Após instalado:
+    - Clique no ícone de engrenagem, depois em "Configurações de extensão" e depois em "settins.json";
+    - Em ```settings.json``` acrescente os seguintes parâmetros:
+    ```json
+    "liveSassCompile.settings.formats":[ 
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "assets/styles/css"
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "assets/styles/css"
+        },
+    ]
+    ```
+    - Depois, na parte inferior do editor, clique em "Watch Sass".
+- Se você não está usando VS Code, você precisa instalar o NodeJS para usar o Sass.
+    - Depois de instalar o NodeJS, abra o prompt de comando e navegue até o diretório do projeto.
+    ```
+    cd [caminho do projeto]
+    ```
+    - Instale o Sass com o ```npm```.
+    ```
+    npm install -g sass
+    ```
+    - Ative o compilador com o seguinte comando: (Para criar a versão minificada do CSS utilize a flag ```--style=compressed```)
+    ```
+    sass assets/styles/scss/style.scss:assets/styles/css/style.css --watch
+    ```
+- Recomendo também instalar a extensão "[Live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)". Caso não queira, abra o arquivo ```index.html``` no navegador.
+- Divirta-se!
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+*To download and install the project on your computer, follow these steps:*
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- *Install the [VS Code](https://code.visualstudio.com/) editor (I highly recommend it, but if there's another editor you like, no problem) and open the project in it.*
+- *If you are using VS Code, install the "[Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)" extension, which will convert your Sass into CSS. After installed:*
+    - *Click on the gear icon, then on "Extension settings" and then on "settins.json";*
+    - *In ```settings.json``` add the following parameters:*
+    ```json
+    "liveSassCompile.settings.formats":[ 
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "assets/styles/css"
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "assets/styles/css"
+        },
+    ]
+    ```
+    - *Then, at the bottom of the editor, click on "Watch Sass".*
+- *If you are not using VS Code, you need to install NodeJS to use Sass.*
+    - *After installing NodeJS, open the command prompt and navigate to your project directory.*
+    ```
+    cd [project path]
+    ```
+    - *Install Sass with ```npm```.*
+    ```
+    npm install -g sass
+    ```
+    - *Activate the compiler with the following command: (To create the minified version of the CSS use the flag ```--style=compressed```)*
+    ```
+    sass assets/styles/scss/style.scss:assets/styles/css/style.css --watch
+    ```
 
-The more specific you are with your questions, the more likely it is that another member of the community will give you feedback.
+- *I also recommend installing the "[Live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)" extension. If not, open the ```index.html``` file in your browser.*
+- *Enjoy it!*
 
-## Got feedback for us?
+## Autor | Author
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+Feito com :heart: por este cara sonhador:
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+*Made with :heart: by this dreamy guy:*
+# Loopstudios landing page web design project - by Frontend Mentor
 
-**Have fun building!** 🚀
+[![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS 3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat&logo=sass&logoColor=white)](https://sass-lang.com/)
+
+| <img src="https://avatars.githubusercontent.com/u/106249494?v=4" width="100px" style="border-radius: 50%"> **Giulliano Guimarães** |
