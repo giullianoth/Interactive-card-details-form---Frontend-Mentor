@@ -3,7 +3,7 @@ import { cardData, cardExpdateLabel, cardExpdateMaxLength, cardExpdateMonth, car
 
 export const isValidDate = (month, year) => {
     let date = new Date(`20${year}-${month}`)
-    return date != "Invalid Date"
+    return String(date) !== "Invalid Date"
 }
 
 export const isNotPastDate = (month, year) => {
